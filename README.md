@@ -2,7 +2,7 @@
 
 Landing page tiếng Việt cho hai bộ quạt áo điều hòa MATIVO X24 và X36. Toàn bộ hình ảnh sử dụng trên trang đã được làm sạch chữ Trung; thông tin sản phẩm được trình bày lại bằng HTML tiếng Việt để rõ ràng, dễ đọc và thân thiện với công cụ tìm kiếm.
 
-Trang ưu tiên trải nghiệm xem sản phẩm: ảnh trọn bộ X24 xuất hiện ngay tại hero, banner ngang so sánh hai phiên bản, một thư viện tương tác chung cho X24/X36 và khối “Bộ sản phẩm” liệt kê rõ từng thành phần. Thư viện hỗ trợ nút chuyển ảnh, thao tác vuốt, bàn phím và trình xem phóng to/thu nhỏ.
+Trang ưu tiên trải nghiệm xem sản phẩm: banner vuông so sánh hai phiên bản xuất hiện ngay dưới tiêu đề chính, ảnh trọn bộ X24 nằm trong hero, một thư viện tương tác chung cho X24/X36 và khối “Bộ sản phẩm” liệt kê rõ từng thành phần. Thư viện hỗ trợ nút chuyển ảnh, thao tác vuốt, bàn phím và trình xem phóng to/thu nhỏ.
 
 Dải ảnh chi tiết được đặt dưới chân khối sản phẩm; trên mobile, ảnh được phóng lớn thành thanh cuộn ngang để dễ xem và chạm chọn hơn.
 
@@ -23,7 +23,7 @@ Sau đó mở `http://localhost:4173`.
 - `script.js`: menu di động, thư viện ảnh X24/X36, thao tác vuốt, trình xem ảnh, luồng “Mua ngay”, biểu mẫu báo giá, hiệu ứng hiển thị và công cụ ước tính thời lượng pin.
 - `assets/x36-gallery-*.webp`: bốn ảnh trong thư viện tương tác và hình bộ sản phẩm của mẫu X36.
 - `assets/x24-gallery-*.webp`: bốn ảnh trong thư viện tương tác của mẫu X24.
-- `assets/x24-x36-wide-banner.webp`: banner ngang so sánh nhanh hai phiên bản X24 và X36.
+- `assets/x24-x36-comparison.webp`: banner vuông so sánh nhanh hai phiên bản X24 và X36.
 - `assets/x24-full-kit.webp`: packshot trọn bộ gồm hai quạt, pin, dây chia DC và cáp Type-C.
 - `assets/`: logo và các ảnh chi tiết sản phẩm đã nén WebP để tải nhanh trên desktop và mobile.
 

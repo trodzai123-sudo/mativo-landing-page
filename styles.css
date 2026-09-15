@@ -357,14 +357,44 @@ button {
 .hero-layout {
   display: grid;
   grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
-  align-items: center;
-  min-height: 570px;
-  gap: 58px;
+  align-items: start;
+  column-gap: 58px;
+  row-gap: 28px;
+}
+
+.hero-title-block,
+.hero-comparison-banner {
+  grid-column: 1 / -1;
+}
+
+.hero-title-block {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-comparison-banner {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 760px);
+  margin: -6px auto 8px;
+  justify-self: center;
+}
+
+.hero-comparison-banner .comparison-banner-scroll {
+  overflow: hidden;
+}
+
+.hero-comparison-banner .comparison-banner-scroll img {
+  width: 100%;
+  min-width: 0;
+  aspect-ratio: 1215 / 1295;
+  object-fit: contain;
 }
 
 .hero-copy {
   position: relative;
   z-index: 2;
+  padding-top: 4px;
 }
 
 .hero .eyebrow {
@@ -2522,7 +2552,8 @@ body.viewer-open {
 
   .hero-layout {
     grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-    gap: 38px;
+    column-gap: 38px;
+    row-gap: 26px;
   }
 
   .kit-showcase {
@@ -2625,7 +2656,7 @@ body.viewer-open {
   }
 
   .hero-layout {
-    gap: 50px;
+    gap: 30px;
   }
 
   .hero-copy {
@@ -2740,6 +2771,15 @@ body.viewer-open {
 
   .hero {
     padding-top: 42px;
+  }
+
+  .hero-layout {
+    gap: 21px;
+  }
+
+  .hero-comparison-banner {
+    width: calc(100% + 8px);
+    margin: -2px -4px 7px;
   }
 
   .hero h1 {
@@ -2877,6 +2917,10 @@ body.viewer-open {
     max-width: none;
     border-radius: 15px;
     scroll-snap-align: center;
+  }
+
+  .hero-comparison-banner .comparison-banner-scroll img {
+    width: 100%;
   }
 
   .comparison-banner-frame figcaption {
@@ -3578,6 +3622,10 @@ body.viewer-open {
 @media (min-width: 701px) and (max-width: 920px) {
   .comparison-banner-scroll img {
     width: 1200px;
+  }
+
+  .hero-comparison-banner .comparison-banner-scroll img {
+    width: 100%;
   }
 }
 

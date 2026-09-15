@@ -14,7 +14,7 @@
       content="Hai cấu hình MATIVO: X24 gọn nhẹ và X36 hiệu năng cao, cùng chuẩn lỗ áo 9cm và động cơ không chổi than."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/x24-x36-wide-banner.webp" />
+    <meta property="og:image" content="assets/x24-x36-comparison.webp" />
     <title>MATIVO X24 &amp; X36 | Bộ quạt áo điều hòa</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,13 +23,13 @@
       href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="preload" href="assets/x24-full-kit.webp" as="image" type="image/webp" />
+    <link rel="preload" href="assets/x24-x36-comparison.webp" as="image" type="image/webp" />
     <script>
       document.documentElement.classList.add("js");
       if ("scrollRestoration" in window.history) window.history.scrollRestoration = "manual";
     </script>
-    <link rel="stylesheet" href="styles.css?v=20260915-2" />
-    <script src="script.js?v=20260915-2" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20260915-3" />
+    <script src="script.js?v=20260915-3" defer></script>
   </head>
 
   <body>
@@ -76,9 +76,50 @@
       <section class="hero" id="trang-chu" aria-labelledby="hero-title">
         <div class="hero-pattern" aria-hidden="true"></div>
         <div class="container hero-layout">
-          <div class="hero-copy reveal">
+          <div class="hero-title-block reveal">
             <p class="eyebrow"><span></span> Hệ thống quạt áo điều hòa MATIVO</p>
             <h1 id="hero-title">Mát chủ động.<br /><span>Bền sức làm.</span></h1>
+          </div>
+
+          <figure
+            class="comparison-banner-frame hero-comparison-banner reveal reveal-delay-1"
+            id="so-sanh"
+            aria-label="Banner vuông so sánh MATIVO X24 và X36"
+          >
+            <div
+              class="comparison-banner-scroll"
+              data-comparison-scroll
+              role="region"
+              aria-label="Banner vuông so sánh X24 và X36"
+              tabindex="0"
+            >
+              <img
+                src="assets/x24-x36-comparison.webp"
+                alt="Banner vuông so sánh hai phiên bản áo điều hòa MATIVO X24 và X36"
+                width="1215"
+                height="1295"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+                data-comparison-image
+              />
+            </div>
+            <figcaption>
+              <span>
+                Chọn X24 khi ưu tiên gọn nhẹ; chọn X36 khi ưu tiên lực gió và hiệu năng cao hơn.
+                <span class="mobile-swipe-hint">Chạm vào ảnh để phóng to và xem rõ.</span>
+              </span>
+              <button class="comparison-zoom-button" type="button" data-comparison-zoom-open>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="11" cy="11" r="6.5" />
+                  <path d="m16 16 4 4M11 8v6M8 11h6" />
+                </svg>
+                Phóng to / thu nhỏ
+              </button>
+            </figcaption>
+          </figure>
+
+          <div class="hero-copy reveal reveal-delay-1">
             <p class="hero-lead">
               Chọn <strong>X36</strong> khi ưu tiên lực gió và hiệu năng 36V, hoặc
               <strong>X24</strong> khi ưu tiên bộ pin gọn nhẹ, nhiều mức điện áp và thời lượng linh hoạt.
@@ -92,8 +133,8 @@
             </div>
 
             <div class="hero-actions">
-              <a class="button" href="#so-sanh">
-                So sánh 2 phiên bản
+              <a class="button" href="#san-pham">
+                Xem sản phẩm X24 / X36
                 <svg viewBox="0 0 20 20" aria-hidden="true">
                   <path d="M4 10h12M11 5l5 5-5 5" />
                 </svg>
@@ -104,7 +145,7 @@
             <p class="hero-note">X24 và X36 đều tương thích lỗ lắp quạt phổ thông đường kính 9cm.</p>
           </div>
 
-          <div class="hero-visual reveal reveal-delay-1">
+          <div class="hero-visual reveal reveal-delay-2">
             <div class="hero-image-card">
               <span class="product-label">MATIVO X24</span>
               <img
@@ -112,7 +153,7 @@
                 alt="Trọn bộ MATIVO X24 gồm hai quạt, pin N41 và dây kết nối"
                 width="1536"
                 height="1024"
-                fetchpriority="high"
+                loading="lazy"
                 decoding="async"
               />
               <div class="hero-badge hero-badge-left"><strong>X24</strong><span>20.000mAh</span></div>
@@ -140,43 +181,6 @@
             <span class="trust-icon" aria-hidden="true">04</span>
             <p><strong>Dễ vệ sinh</strong><small>Nắp quạt tháo rời</small></p>
           </div>
-        </div>
-      </section>
-
-      <section class="comparison-banner" id="so-sanh" aria-label="So sánh MATIVO X24 và X36">
-        <div class="container">
-          <figure class="comparison-banner-frame reveal">
-            <div
-              class="comparison-banner-scroll"
-              data-comparison-scroll
-              role="region"
-              aria-label="Banner so sánh X24 và X36, có thể vuốt ngang trên điện thoại"
-              tabindex="0"
-            >
-              <img
-                src="assets/x24-x36-wide-banner.webp"
-                alt="Banner ngang so sánh hai phiên bản áo điều hòa MATIVO X24 và X36"
-                width="2048"
-                height="762"
-                loading="lazy"
-                decoding="async"
-                data-comparison-image
-              />
-            </div>
-            <figcaption>
-              <span>
-                Chọn X24 khi ưu tiên gọn nhẹ; chọn X36 khi ưu tiên lực gió và hiệu năng cao hơn.
-                <span class="mobile-swipe-hint">Vuốt ngang để xem rõ toàn bộ banner.</span>
-              </span>
-              <button class="comparison-zoom-button" type="button" data-comparison-zoom-open>
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="11" cy="11" r="6.5" />
-                  <path d="m16 16 4 4M11 8v6M8 11h6" />
-                </svg>
-                Phóng to / thu nhỏ
-              </button>
-            </figcaption>
-          </figure>
         </div>
       </section>
 
