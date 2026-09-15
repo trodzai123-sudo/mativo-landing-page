@@ -782,6 +782,7 @@ button {
   aspect-ratio: 1 / 1;
   object-fit: contain;
   opacity: 1;
+  cursor: zoom-in;
   transition: opacity 0.22s ease, transform 0.22s ease;
   user-select: none;
 }
@@ -2296,6 +2297,8 @@ body.viewer-open {
   grid-template-rows: auto minmax(0, 1fr) auto;
   width: min(1180px, 100%);
   height: min(860px, calc(100vh - 48px));
+  min-width: 0;
+  min-height: 0;
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 22px;
   background: #07172d;
@@ -2368,6 +2371,9 @@ body.viewer-open {
 .image-viewer-canvas {
   position: relative;
   display: grid;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
   min-height: 0;
   padding: 18px;
   place-items: center;
@@ -2390,9 +2396,13 @@ body.viewer-open {
 }
 
 .image-viewer-canvas img {
+  display: block;
+  width: 100%;
+  height: 100%;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  object-position: center;
   transform-origin: center;
   transition: transform 0.16s ease;
   user-select: none;

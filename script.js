@@ -387,10 +387,12 @@ const viewerCanvas = imageViewer?.querySelector("[data-viewer-canvas]");
 const viewerTitle = imageViewer?.querySelector("[data-viewer-title]");
 const viewerZoomOutput = imageViewer?.querySelector("[data-viewer-zoom-output]");
 const viewerOpenButton = document.querySelector("[data-gallery-zoom-open]");
+const galleryMainImage = productGallery?.querySelector("[data-gallery-main]");
 let viewerScale = 1;
 let viewerX = 0;
 let viewerY = 0;
 let dragStart = null;
+let viewerReturnFocus = null;
 
 const updateViewerTransform = () => {
   if (!viewerImage) return;
@@ -417,23 +419,40 @@ const resetViewer = () => {
 
 const closeViewer = () => {
   if (!imageViewer || imageViewer.hidden) return;
+  const focusTarget = viewerReturnFocus || viewerOpenButton;
   imageViewer.hidden = true;
   document.body.classList.remove("viewer-open");
   resetViewer();
-  viewerOpenButton?.focus();
+  viewerReturnFocus = null;
+  focusTarget?.focus();
 };
 
-viewerOpenButton?.addEventListener("click", () => {
-  const galleryImage = productGallery?.querySelector("[data-gallery-main]");
-  if (!imageViewer || !viewerImage || !galleryImage) return;
-  viewerImage.src = galleryImage.currentSrc || galleryImage.src;
-  viewerImage.alt = galleryImage.alt;
-  if (viewerTitle) viewerTitle.textContent = galleryImage.alt || "Ảnh sản phẩm MATIVO";
+const openViewer = (focusTarget = viewerOpenButton) => {
+  if (!imageViewer || !viewerImage || !galleryMainImage) return;
+  viewerReturnFocus = focusTarget;
+  viewerImage.src = galleryMainImage.currentSrc || galleryMainImage.src;
+  viewerImage.alt = galleryMainImage.alt;
+  if (viewerTitle) viewerTitle.textContent = galleryMainImage.alt || "Ảnh sản phẩm MATIVO";
   imageViewer.hidden = false;
   document.body.classList.add("viewer-open");
   resetViewer();
   imageViewer.querySelector("[data-viewer-close]")?.focus();
-});
+};
+
+viewerOpenButton?.addEventListener("click", () => openViewer(viewerOpenButton));
+
+if (galleryMainImage) {
+  galleryMainImage.tabIndex = 0;
+  galleryMainImage.setAttribute("role", "button");
+  galleryMainImage.setAttribute("aria-label", "Nhấp để phóng to ảnh sản phẩm");
+
+  galleryMainImage.addEventListener("click", () => openViewer(galleryMainImage));
+  galleryMainImage.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    openViewer(galleryMainImage);
+  });
+}
 
 imageViewer?.querySelectorAll("[data-viewer-close]").forEach((button) => {
   button.addEventListener("click", closeViewer);
