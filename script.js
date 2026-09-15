@@ -1,88 +1,133 @@
-(() => {
-  const menuToggle = document.querySelector('[data-menu-toggle]');
-  const menu = document.querySelector('[data-menu]');
-  const header = document.querySelector('[data-header]');
+const header = document.querySelector("[data-header]");
+const menuToggle = document.querySelector("[data-menu-toggle]");
+const menu = document.querySelector("[data-menu]");
+const menuLinks = menu ? [...menu.querySelectorAll("a")] : [];
 
-  if (menuToggle && menu) {
-    const closeMenu = () => {
-      menu.classList.remove('is-open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    };
+const setHeaderState = () => {
+  header?.classList.toggle("is-scrolled", window.scrollY > 12);
+};
 
-    menuToggle.addEventListener('click', () => {
-      const open = menu.classList.toggle('is-open');
-      menuToggle.setAttribute('aria-expanded', String(open));
-    });
+const closeMenu = () => {
+  if (!menu || !menuToggle) return;
+  menu.classList.remove("is-open");
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.setAttribute("aria-label", "Mở menu");
+  document.body.classList.remove("menu-open");
+};
 
-    menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') closeMenu();
-    });
-  }
+menuToggle?.addEventListener("click", () => {
+  if (!menu) return;
+  const willOpen = !menu.classList.contains("is-open");
+  menu.classList.toggle("is-open", willOpen);
+  menuToggle.setAttribute("aria-expanded", String(willOpen));
+  menuToggle.setAttribute("aria-label", willOpen ? "Đóng menu" : "Mở menu");
+  document.body.classList.toggle("menu-open", willOpen);
+});
 
-  const setHeaderState = () => {
-    if (!header) return;
-    header.classList.toggle('is-scrolled', window.scrollY > 10);
-  };
-  setHeaderState();
-  window.addEventListener('scroll', setHeaderState, { passive: true });
+menuLinks.forEach((link) => link.addEventListener("click", closeMenu));
 
-  // X36: dùng đúng 4 ảnh sản phẩm người dùng đã cung cấp, không dùng ảnh tự tạo.
-  document.querySelectorAll('.hero-sku-x36 img, .product-card-x36 .product-media img').forEach((img) => {
-    img.src = 'assets/x36-gallery-3.webp';
-    img.alt = 'Trọn bộ MATIVO X36 gồm 2 quạt 36V, pin 24.000mAh và phụ kiện';
-  });
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeMenu();
+});
 
-  const x36Gallery = document.querySelector('.gallery-grid-x36');
-  if (x36Gallery) {
-    x36Gallery.innerHTML = `
-      <figure class="gallery-card">
-        <img src="assets/x36-gallery-1.webp" alt="MATIVO X36 36V gió mạnh và pin 24.000mAh" width="384" height="384" loading="lazy" />
-        <figcaption>36V gió mạnh · pin 24.000mAh</figcaption>
-      </figure>
-      <figure class="gallery-card">
-        <img src="assets/x36-gallery-2.webp" alt="Động cơ DC không chổi than 36V MATIVO X36" width="384" height="384" loading="lazy" />
-        <figcaption>Động cơ không chổi than 36V</figcaption>
-      </figure>
-      <figure class="gallery-card">
-        <img src="assets/x36-gallery-3.webp" alt="Trọn bộ MATIVO X36 gồm quạt pin và phụ kiện" width="384" height="384" loading="lazy" />
-        <figcaption>Trọn bộ X36 · quạt + pin + phụ kiện</figcaption>
-      </figure>
-      <figure class="gallery-card">
-        <img src="assets/x36-gallery-4.webp" alt="Áo điều hòa MATIVO X36 sử dụng thực tế" width="360" height="384" loading="lazy" />
-        <figcaption>Ứng dụng thực tế với áo điều hòa</figcaption>
-      </figure>`;
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 920) closeMenu();
+});
 
-    const x36Style = document.createElement('style');
-    x36Style.textContent = `
-      .gallery-grid-x36{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-      .gallery-grid-x36 figure{min-height:0;aspect-ratio:1/1;background:#eef5fb}
-      .gallery-grid-x36 figure img{width:100%;height:100%;object-fit:contain!important;object-position:center!important;transform:none!important;background:#eef5fb}
-      @media(max-width:760px){.gallery-grid-x36{grid-template-columns:1fr}.gallery-grid-x36 figure{aspect-ratio:auto}.gallery-grid-x36 figure img{height:auto;aspect-ratio:1/1}}
-    `;
-    document.head.appendChild(x36Style);
-  }
+window.addEventListener("scroll", setHeaderState, { passive: true });
+setHeaderState();
 
-  const revealItems = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries, obs) => {
+const revealElements = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-visible');
-        obs.unobserve(entry.target);
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
-    revealItems.forEach((item) => observer.observe(item));
-  } else {
-    revealItems.forEach((item) => item.classList.add('is-visible'));
-  }
+    },
+    { rootMargin: "0px 0px -8%", threshold: 0.08 },
+  );
 
-  document.querySelectorAll('.faq-list details').forEach((detail) => {
-    detail.addEventListener('toggle', () => {
-      if (!detail.open) return;
-      document.querySelectorAll('.faq-list details').forEach((other) => {
-        if (other !== detail) other.open = false;
-      });
+  revealElements.forEach((element) => revealObserver.observe(element));
+} else {
+  revealElements.forEach((element) => element.classList.add("is-visible"));
+}
+
+const productGallery = document.querySelector("[data-product-gallery]");
+
+if (productGallery) {
+  const galleryButtons = [...productGallery.querySelectorAll("[data-gallery-src]")];
+  const galleryImage = productGallery.querySelector("[data-gallery-main]");
+  const galleryTitle = productGallery.querySelector("[data-gallery-title]");
+  const galleryDescription = productGallery.querySelector("[data-gallery-description]");
+  const galleryIndex = productGallery.querySelector("[data-gallery-index]");
+  const galleryKicker = productGallery.querySelector(".gallery-copy .mini-label");
+
+  const showGalleryItem = (button) => {
+    if (!galleryImage || button.classList.contains("is-active")) return;
+
+    galleryButtons.forEach((item) => {
+      const isActive = item === button;
+      item.classList.toggle("is-active", isActive);
+      item.setAttribute("aria-selected", String(isActive));
+      item.tabIndex = isActive ? 0 : -1;
+    });
+
+    const applyImage = () => {
+      galleryImage.src = button.dataset.gallerySrc;
+      galleryImage.alt = button.dataset.galleryAlt || "Hình ảnh MATIVO X36";
+      if (galleryTitle) galleryTitle.textContent = button.dataset.galleryTitle;
+      if (galleryDescription) galleryDescription.textContent = button.dataset.galleryDescription;
+      if (galleryIndex) galleryIndex.textContent = button.dataset.galleryNumber;
+      if (galleryKicker) galleryKicker.textContent = `GÓC NHÌN ${button.dataset.galleryNumber}`;
+      requestAnimationFrame(() => galleryImage.classList.remove("is-changing"));
+    };
+
+    galleryImage.classList.add("is-changing");
+    const preloader = new Image();
+    preloader.onload = applyImage;
+    preloader.onerror = applyImage;
+    preloader.src = button.dataset.gallerySrc;
+  };
+
+  galleryButtons.forEach((button, index) => {
+    button.tabIndex = index === 0 ? 0 : -1;
+    button.addEventListener("click", () => showGalleryItem(button));
+    button.addEventListener("keydown", (event) => {
+      if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+      event.preventDefault();
+      const direction = event.key === 'ArrowRight' ? 1 : -1;
+      const nextIndex = (index + direction + galleryButtons.length) % galleryButtons.length;
+      galleryButtons[nextIndex].focus();
+      showGalleryItem(galleryButtons[nextIndex]);
     });
   });
-})();
+}
+
+const runtime = document.querySelector("[data-runtime]");
+
+if (runtime) {
+  const buttons = [...runtime.querySelectorAll("[data-voltage]")];
+  const voltageOutput = runtime.querySelector("[data-voltage-output]");
+  const hoursOutput = runtime.querySelector("[data-hours-output]");
+  const ring = runtime.querySelector("[data-runtime-ring]");
+
+  const updateRuntime = (button) => {
+    const voltage = button.dataset.voltage;
+    const hours = button.dataset.hours;
+    const progress = Math.min((Number(hours) / 20) * 100, 100);
+
+    buttons.forEach((item) => item.setAttribute("aria-selected", String(item === button)));
+    if (voltageOutput) voltageOutput.textContent = voltage;
+    if (hoursOutput) hoursOutput.textContent = hours.replace(".", ",");
+    if (ring) ring.style.setProperty("--progress", `${progress}%`);
+  };
+
+  buttons.forEach((button) => button.addEventListener("click", () => updateRuntime(button)));
+}
+
+const year = document.querySelector("[data-year]");
+if (year) year.textContent = new Date().getFullYear();
