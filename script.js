@@ -56,15 +56,16 @@ if ("IntersectionObserver" in window) {
   revealElements.forEach((element) => element.classList.add("is-visible"));
 }
 
-const productGallery = document.querySelector("[data-product-gallery]");
+const productGalleries = document.querySelectorAll("[data-product-gallery]");
 
-if (productGallery) {
+productGalleries.forEach((productGallery) => {
   const galleryButtons = [...productGallery.querySelectorAll("[data-gallery-src]")];
   const galleryImage = productGallery.querySelector("[data-gallery-main]");
   const galleryTitle = productGallery.querySelector("[data-gallery-title]");
   const galleryDescription = productGallery.querySelector("[data-gallery-description]");
   const galleryIndex = productGallery.querySelector("[data-gallery-index]");
   const galleryKicker = productGallery.querySelector(".gallery-copy .mini-label");
+  const galleryModel = productGallery.dataset.galleryModel || "sản phẩm";
 
   const showGalleryItem = (button) => {
     if (!galleryImage || button.classList.contains("is-active")) return;
@@ -78,7 +79,7 @@ if (productGallery) {
 
     const applyImage = () => {
       galleryImage.src = button.dataset.gallerySrc;
-      galleryImage.alt = button.dataset.galleryAlt || "Hình ảnh MATIVO X36";
+      galleryImage.alt = button.dataset.galleryAlt || `Hình ảnh MATIVO ${galleryModel}`;
       if (galleryTitle) galleryTitle.textContent = button.dataset.galleryTitle;
       if (galleryDescription) galleryDescription.textContent = button.dataset.galleryDescription;
       if (galleryIndex) galleryIndex.textContent = button.dataset.galleryNumber;
@@ -97,15 +98,15 @@ if (productGallery) {
     button.tabIndex = index === 0 ? 0 : -1;
     button.addEventListener("click", () => showGalleryItem(button));
     button.addEventListener("keydown", (event) => {
-      if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+      if (!["ArrowLeft", "ArrowRight"].includes(event.key)) return;
       event.preventDefault();
-      const direction = event.key === 'ArrowRight' ? 1 : -1;
+      const direction = event.key === "ArrowRight" ? 1 : -1;
       const nextIndex = (index + direction + galleryButtons.length) % galleryButtons.length;
       galleryButtons[nextIndex].focus();
       showGalleryItem(galleryButtons[nextIndex]);
     });
   });
-}
+});
 
 const runtime = document.querySelector("[data-runtime]");
 

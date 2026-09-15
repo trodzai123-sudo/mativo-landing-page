@@ -585,6 +585,39 @@ button {
   font-size: 0.68rem;
 }
 
+.comparison-banner {
+  position: relative;
+  padding: 64px 0 76px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(45, 171, 255, 0.14), transparent 38%),
+    linear-gradient(180deg, #f5fbff 0%, #eaf6ff 100%);
+  overflow: hidden;
+}
+
+.comparison-banner-frame {
+  width: min(100%, 1060px);
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid rgba(27, 132, 224, 0.16);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 28px 70px rgba(17, 79, 139, 0.14);
+}
+
+.comparison-banner-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 21px;
+}
+
+.comparison-banner-frame figcaption {
+  padding: 12px 10px 4px;
+  color: #718196;
+  font-size: 0.66rem;
+  text-align: center;
+}
+
 .x36-gallery {
   position: relative;
   color: var(--white);
@@ -608,7 +641,7 @@ button {
   pointer-events: none;
 }
 
-.x36-heading {
+.product-gallery-heading {
   position: relative;
   z-index: 1;
   display: grid;
@@ -621,21 +654,21 @@ button {
   color: var(--white);
 }
 
-.x36-heading-copy > p {
+.product-gallery-heading-copy > p {
   margin: 0;
   color: rgba(220, 237, 255, 0.65);
   font-size: 0.9rem;
   line-height: 1.75;
 }
 
-.x36-chips {
+.gallery-chips {
   display: flex;
   flex-wrap: wrap;
   margin-top: 19px;
   gap: 7px;
 }
 
-.x36-chips span {
+.gallery-chips span {
   padding: 7px 10px;
   border: 1px solid rgba(116, 200, 255, 0.2);
   border-radius: 999px;
@@ -645,7 +678,7 @@ button {
   font-weight: 700;
 }
 
-.x36-gallery-layout {
+.product-gallery-layout {
   position: relative;
   z-index: 1;
   display: grid;
@@ -794,6 +827,95 @@ button {
   padding-top: 20px;
   color: rgba(220, 237, 255, 0.38);
   font-size: 0.61rem;
+}
+
+.x24-gallery {
+  position: relative;
+  color: var(--navy);
+  background:
+    linear-gradient(rgba(15, 128, 229, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 128, 229, 0.04) 1px, transparent 1px),
+    #eef8ff;
+  background-size: 64px 64px;
+  overflow: hidden;
+}
+
+.x24-orb {
+  position: absolute;
+  top: -190px;
+  left: -180px;
+  width: 570px;
+  height: 570px;
+  border-radius: 50%;
+  background: rgba(63, 181, 255, 0.22);
+  filter: blur(105px);
+  pointer-events: none;
+}
+
+.x24-gallery .product-gallery-heading-copy > p {
+  color: var(--ink-soft);
+}
+
+.x24-gallery .gallery-chips span {
+  border-color: rgba(16, 128, 223, 0.18);
+  color: var(--blue-dark);
+  background: rgba(18, 142, 239, 0.08);
+}
+
+.x24-gallery .gallery-stage {
+  border-color: rgba(15, 116, 201, 0.16);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 28px 68px rgba(24, 89, 145, 0.14);
+}
+
+.x24-gallery .gallery-stage-top {
+  color: #71849a;
+}
+
+.x24-gallery .gallery-stage-top strong,
+.x24-gallery .gallery-thumb strong,
+.x24-gallery .gallery-copy .mini-label {
+  color: var(--blue);
+}
+
+.x24-gallery .gallery-stage figcaption,
+.x24-gallery .gallery-hint {
+  color: #7c8da2;
+}
+
+.x24-gallery .gallery-panel {
+  border-color: rgba(15, 116, 201, 0.14);
+  background:
+    radial-gradient(circle at 90% 4%, rgba(47, 170, 255, 0.13), transparent 31%),
+    rgba(255, 255, 255, 0.78);
+}
+
+.x24-gallery .gallery-copy {
+  border-color: var(--line);
+}
+
+.x24-gallery .gallery-copy h3 {
+  color: var(--navy);
+}
+
+.x24-gallery .gallery-copy p {
+  color: var(--ink-soft);
+}
+
+.x24-gallery .gallery-thumb {
+  border-color: rgba(13, 99, 173, 0.14);
+  color: #50657c;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.x24-gallery .gallery-thumb:hover {
+  border-color: rgba(17, 137, 230, 0.48);
+}
+
+.x24-gallery .gallery-thumb.is-active {
+  border-color: var(--blue);
+  background: #ffffff;
+  box-shadow: 0 10px 28px rgba(15, 128, 229, 0.12);
 }
 
 .section-heading {
@@ -1663,11 +1785,11 @@ details p {
     grid-template-columns: 1fr 0.9fr;
   }
 
-  .x36-heading {
+  .product-gallery-heading {
     gap: 52px;
   }
 
-  .x36-gallery-layout {
+  .product-gallery-layout {
     grid-template-columns: minmax(0, 1fr) minmax(360px, 0.86fr);
   }
 
@@ -1746,8 +1868,8 @@ details p {
   }
 
   .hero-layout,
-  .x36-heading,
-  .x36-gallery-layout,
+  .product-gallery-heading,
+  .product-gallery-layout,
   .kit-showcase,
   .technology-layout,
   .specs-layout,
@@ -1786,11 +1908,11 @@ details p {
     padding-left: 0;
   }
 
-  .x36-heading {
+  .product-gallery-heading {
     gap: 18px;
   }
 
-  .x36-heading-copy {
+  .product-gallery-heading-copy {
     max-width: 720px;
   }
 
@@ -1970,6 +2092,24 @@ details p {
     font-size: 0.58rem;
   }
 
+  .comparison-banner {
+    padding: 38px 0 48px;
+  }
+
+  .comparison-banner-frame {
+    padding: 6px;
+    border-radius: 20px;
+  }
+
+  .comparison-banner-frame img {
+    border-radius: 15px;
+  }
+
+  .comparison-banner-frame figcaption {
+    padding: 10px 6px 3px;
+    font-size: 0.58rem;
+  }
+
   .section-heading h2,
   .technology h2,
   .runtime h2,
@@ -1979,7 +2119,7 @@ details p {
     font-size: clamp(1.9rem, 9vw, 2.55rem);
   }
 
-  .x36-heading-copy > p {
+  .product-gallery-heading-copy > p {
     font-size: 0.82rem;
   }
 
