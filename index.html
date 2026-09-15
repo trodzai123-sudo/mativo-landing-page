@@ -143,15 +143,26 @@
       <section class="comparison-banner" id="so-sanh" aria-label="So sánh MATIVO X24 và X36">
         <div class="container">
           <figure class="comparison-banner-frame reveal">
-            <img
-              src="assets/x24-x36-wide-banner.webp"
-              alt="Banner ngang so sánh hai phiên bản áo điều hòa MATIVO X24 và X36"
-              width="2048"
-              height="762"
-              loading="lazy"
-              decoding="async"
-            />
-            <figcaption>Chọn X24 khi ưu tiên gọn nhẹ; chọn X36 khi ưu tiên lực gió và hiệu năng cao hơn.</figcaption>
+            <div
+              class="comparison-banner-scroll"
+              data-comparison-scroll
+              role="region"
+              aria-label="Banner so sánh X24 và X36, có thể vuốt ngang trên điện thoại"
+              tabindex="0"
+            >
+              <img
+                src="assets/x24-x36-wide-banner.webp"
+                alt="Banner ngang so sánh hai phiên bản áo điều hòa MATIVO X24 và X36"
+                width="2048"
+                height="762"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <figcaption>
+              Chọn X24 khi ưu tiên gọn nhẹ; chọn X36 khi ưu tiên lực gió và hiệu năng cao hơn.
+              <span class="mobile-swipe-hint">Vuốt ngang để xem rõ toàn bộ banner.</span>
+            </figcaption>
           </figure>
         </div>
       </section>
@@ -869,6 +880,33 @@
         <p class="image-viewer-help">Dùng nút + / − hoặc lăn chuột để phóng to, thu nhỏ. Kéo ảnh khi đang phóng to.</p>
       </div>
     </div>
+
+    <aside class="floating-contact" aria-label="Liên hệ MATIVO">
+      <a
+        class="contact-button contact-button-messenger"
+        href="https://m.me/61594450857841"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Nhắn tin cho MATIVO qua Messenger"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2C6.48 2 2 6.15 2 11.27c0 2.91 1.45 5.5 3.72 7.2V22l3.4-1.87c.91.25 1.88.39 2.88.39 5.52 0 10-4.15 10-9.25S17.52 2 12 2Zm.99 12.48-2.55-2.72-4.98 2.72 5.48-5.82 2.62 2.72 4.91-2.72-5.48 5.82Z"/>
+        </svg>
+        <span>Messenger</span>
+      </a>
+      <a
+        class="contact-button contact-button-facebook"
+        href="https://www.facebook.com/profile.php?id=61594450857841"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Mở fanpage MATIVO trên Facebook"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M13.7 22v-8.3h2.8l.42-3.24H13.7V8.39c0-.94.26-1.58 1.61-1.58h1.72v-2.9c-.3-.04-1.32-.13-2.51-.13-2.49 0-4.19 1.52-4.19 4.31v2.4H7.5v3.23h2.82V22h3.38Z"/>
+        </svg>
+        <span>Facebook</span>
+      </a>
+    </aside>
 
     <a class="mobile-cta" href="#bao-gia">Nhận báo giá X24 / X36</a>
   </body>

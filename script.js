@@ -354,6 +354,33 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+const comparisonScroll = document.querySelector("[data-comparison-scroll]");
+
+if (comparisonScroll) {
+  const comparisonImage = comparisonScroll.querySelector("img");
+  const mobileComparison = window.matchMedia("(max-width: 700px)");
+
+  const positionComparisonBanner = () => {
+    requestAnimationFrame(() => {
+      comparisonScroll.scrollLeft = mobileComparison.matches
+        ? Math.max(0, (comparisonScroll.scrollWidth - comparisonScroll.clientWidth) / 2)
+        : 0;
+    });
+  };
+
+  if (comparisonImage?.complete) {
+    positionComparisonBanner();
+  } else {
+    comparisonImage?.addEventListener("load", positionComparisonBanner, { once: true });
+  }
+
+  if (typeof mobileComparison.addEventListener === "function") {
+    mobileComparison.addEventListener("change", positionComparisonBanner);
+  } else {
+    mobileComparison.addListener?.(positionComparisonBanner);
+  }
+}
+
 const imageViewer = document.querySelector("[data-image-viewer]");
 const viewerImage = imageViewer?.querySelector("[data-viewer-image]");
 const viewerCanvas = imageViewer?.querySelector("[data-viewer-canvas]");
