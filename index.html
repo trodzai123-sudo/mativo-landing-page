@@ -14,7 +14,7 @@
       content="Hai cấu hình MATIVO: X24 gọn nhẹ và X36 hiệu năng cao, cùng chuẩn lỗ áo 9cm và động cơ không chổi than."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/x24-x36-comparison.webp" />
+    <meta property="og:image" content="assets/x24-x36-wide-banner.webp" />
     <title>MATIVO X24 &amp; X36 | Bộ quạt áo điều hòa</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,7 +23,7 @@
       href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="preload" href="assets/x24-x36-comparison.webp" as="image" type="image/webp" />
+    <link rel="preload" href="assets/x24-full-kit.webp" as="image" type="image/webp" />
     <script>document.documentElement.classList.add("js");</script>
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
@@ -59,13 +59,12 @@
         </button>
 
         <nav class="main-nav" id="main-menu" aria-label="Điều hướng chính" data-menu>
-          <a href="#thu-vien-x36">Mẫu X36</a>
-          <a href="#thu-vien-x24">Mẫu X24</a>
+          <a href="#san-pham">Sản phẩm</a>
           <a href="#bo-san-pham">Bộ sản phẩm</a>
           <a href="#cong-nghe">Công nghệ</a>
           <a href="#thong-so">Thông số</a>
           <a href="#faq">Hỏi đáp</a>
-          <a class="button button-small" href="#so-sanh">Chọn phiên bản</a>
+          <a class="button button-small" href="#bao-gia">Nhận báo giá</a>
         </nav>
       </div>
     </header>
@@ -104,17 +103,17 @@
 
           <div class="hero-visual reveal reveal-delay-1">
             <div class="hero-image-card">
-              <span class="product-label">X24 + X36</span>
+              <span class="product-label">MATIVO X24</span>
               <img
-                src="assets/x24-x36-comparison.webp"
-                alt="Hai phiên bản quạt áo điều hòa MATIVO X24 và X36"
-                width="1215"
-                height="1295"
+                src="assets/x24-full-kit.webp"
+                alt="Trọn bộ MATIVO X24 gồm hai quạt, pin N41 và dây kết nối"
+                width="1536"
+                height="1024"
                 fetchpriority="high"
                 decoding="async"
               />
               <div class="hero-badge hero-badge-left"><strong>X24</strong><span>20.000mAh</span></div>
-              <div class="hero-badge hero-badge-right"><strong>X36</strong><span>24.000mAh</span></div>
+              <div class="hero-badge hero-badge-right"><strong>24V</strong><span>4 cấp độ gió</span></div>
             </div>
           </div>
         </div>
@@ -145,10 +144,10 @@
         <div class="container">
           <figure class="comparison-banner-frame reveal">
             <img
-              src="assets/x24-x36-comparison.webp"
-              alt="So sánh hai phiên bản áo điều hòa MATIVO X24 và X36"
-              width="1215"
-              height="1295"
+              src="assets/x24-x36-wide-banner.webp"
+              alt="Banner ngang so sánh hai phiên bản áo điều hòa MATIVO X24 và X36"
+              width="2048"
+              height="762"
               loading="lazy"
               decoding="async"
             />
@@ -157,58 +156,92 @@
         </div>
       </section>
 
-      <section class="section x36-gallery" id="thu-vien-x36" aria-labelledby="x36-gallery-title">
-        <div class="x36-orb" aria-hidden="true"></div>
+      <section
+        class="section product-showcase"
+        id="san-pham"
+        aria-labelledby="product-gallery-title"
+        data-product-showcase
+        data-active-model="X36"
+      >
+        <div class="product-showcase-orb" aria-hidden="true"></div>
         <div class="container">
-          <div class="section-heading product-gallery-heading x36-heading reveal">
+          <div class="section-heading product-gallery-heading reveal">
             <div>
-              <p class="eyebrow"><span></span> Mẫu MATIVO X36</p>
-              <h2 id="x36-gallery-title">Thư viện sản phẩm X36</h2>
+              <p class="eyebrow"><span></span> Hai cấu hình MATIVO</p>
+              <h2 id="product-gallery-title">Một thư viện.<br />Trọn bộ X24 &amp; X36.</h2>
             </div>
             <div class="product-gallery-heading-copy">
               <p>
-                Xem rõ bộ quạt 36V, pin 24.000mAh và cách sản phẩm đồng hành trong
-                môi trường làm việc nhiệt độ cao.
+                Chuyển nhanh giữa hai mẫu rồi vuốt trực tiếp trên ảnh để xem trọn bộ,
+                cấu tạo quạt, pin và trải nghiệm sử dụng thực tế.
               </p>
-              <div class="gallery-chips" aria-label="Thông số nổi bật của X36">
-                <span>36V</span><span>24.000mAh</span><span>~8.600 RPM</span>
+              <div class="model-switch" role="tablist" aria-label="Chọn phiên bản MATIVO">
+                <button type="button" role="tab" aria-selected="false" data-gallery-model-button="X24">
+                  <strong>X24</strong><span>24V · 20.000mAh</span>
+                </button>
+                <button class="is-active" type="button" role="tab" aria-selected="true" data-gallery-model-button="X36">
+                  <strong>X36</strong><span>36V · 24.000mAh</span>
+                </button>
               </div>
             </div>
           </div>
 
           <div class="product-gallery-layout reveal" data-product-gallery data-gallery-model="X36">
-            <figure class="gallery-stage">
+            <figure
+              class="gallery-stage"
+              tabindex="0"
+              aria-label="Thư viện ảnh sản phẩm MATIVO"
+              aria-roledescription="carousel"
+              data-gallery-stage
+            >
               <div class="gallery-stage-top">
-                <span>MATIVO X36</span>
-                <span><strong data-gallery-index>01</strong> / 04</span>
+                <span data-gallery-model-label>MATIVO X36</span>
+                <span><strong data-gallery-index>01</strong> / <span data-gallery-total>04</span></span>
               </div>
-              <img
-                src="assets/x36-gallery-lifestyle.webp"
-                alt="Người mặc áo điều hòa MATIVO X36 cùng quạt, pin và phụ kiện đi kèm"
-                width="1215"
-                height="1295"
-                loading="lazy"
-                decoding="async"
-                data-gallery-main
-              />
-              <figcaption>Hình ảnh sản phẩm MATIVO X36</figcaption>
+              <div class="gallery-image-wrap">
+                <img
+                  src="assets/x36-gallery-lifestyle.webp"
+                  alt="Người mặc áo điều hòa MATIVO X36 cùng quạt, pin và phụ kiện đi kèm"
+                  width="1215"
+                  height="1295"
+                  loading="lazy"
+                  decoding="async"
+                  draggable="false"
+                  data-gallery-main
+                />
+                <button class="gallery-arrow gallery-arrow-prev" type="button" aria-label="Xem ảnh trước" data-gallery-prev>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+                </button>
+                <button class="gallery-arrow gallery-arrow-next" type="button" aria-label="Xem ảnh tiếp theo" data-gallery-next>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+                </button>
+                <button class="gallery-zoom-button" type="button" aria-label="Mở ảnh và phóng to" data-gallery-zoom-open>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="11" cy="11" r="6.5" />
+                    <path d="m16 16 4 4M11 8v6M8 11h6" />
+                  </svg>
+                  <span>Phóng to</span>
+                </button>
+              </div>
+              <figcaption><span aria-hidden="true">↔</span> Vuốt trái hoặc phải để đổi ảnh</figcaption>
             </figure>
 
             <div class="gallery-panel">
               <div class="gallery-copy" aria-live="polite">
-                <span class="mini-label">GÓC NHÌN 01</span>
+                <span class="mini-label">X36 · GÓC NHÌN 01</span>
                 <h3 data-gallery-title>Trọn bộ X36 cho ngày làm việc nóng bức</h3>
                 <p data-gallery-description>
                   Hai quạt 36V kết hợp pin 24.000mAh, dây sạc và phụ kiện để tạo luồng khí liên tục khi làm việc ngoài trời.
                 </p>
               </div>
 
-              <div class="gallery-thumbs" role="tablist" aria-label="Chọn ảnh MATIVO X36">
+              <div class="gallery-thumbs" role="tablist" aria-label="Chọn ảnh sản phẩm MATIVO">
                 <button
                   class="gallery-thumb is-active"
                   type="button"
                   role="tab"
                   aria-selected="true"
+                  data-gallery-item-model="X36"
                   data-gallery-src="assets/x36-gallery-lifestyle.webp"
                   data-gallery-alt="Người mặc áo điều hòa MATIVO X36 cùng quạt, pin và phụ kiện đi kèm"
                   data-gallery-title="Trọn bộ X36 cho ngày làm việc nóng bức"
@@ -216,13 +249,14 @@
                   data-gallery-number="01"
                 >
                   <img src="assets/x36-gallery-lifestyle.webp" alt="" width="1215" height="1295" loading="lazy" decoding="async" />
-                  <span><strong>01</strong> Ứng dụng thực tế</span>
+                  <span><strong>01</strong> Thực tế</span>
                 </button>
                 <button
                   class="gallery-thumb"
                   type="button"
                   role="tab"
                   aria-selected="false"
+                  data-gallery-item-model="X36"
                   data-gallery-src="assets/x36-gallery-kit.webp"
                   data-gallery-alt="Trọn bộ MATIVO X36 gồm hai quạt, pin, dây kết nối và bộ sạc"
                   data-gallery-title="Trọn bộ X36 rõ từng thành phần"
@@ -230,13 +264,14 @@
                   data-gallery-number="02"
                 >
                   <img src="assets/x36-gallery-kit.webp" alt="" width="1254" height="1254" loading="lazy" decoding="async" />
-                  <span><strong>02</strong> Bộ sản phẩm</span>
+                  <span><strong>02</strong> Trọn bộ</span>
                 </button>
                 <button
                   class="gallery-thumb"
                   type="button"
                   role="tab"
                   aria-selected="false"
+                  data-gallery-item-model="X36"
                   data-gallery-src="assets/x36-gallery-fan.webp"
                   data-gallery-alt="Cấu trúc động cơ không chổi than của quạt MATIVO X36"
                   data-gallery-title="Động cơ không chổi than 36V"
@@ -244,13 +279,14 @@
                   data-gallery-number="03"
                 >
                   <img src="assets/x36-gallery-fan.webp" alt="" width="1254" height="1254" loading="lazy" decoding="async" />
-                  <span><strong>03</strong> Cấu trúc quạt</span>
+                  <span><strong>03</strong> Động cơ</span>
                 </button>
                 <button
                   class="gallery-thumb"
                   type="button"
                   role="tab"
                   aria-selected="false"
+                  data-gallery-item-model="X36"
                   data-gallery-src="assets/x36-gallery-power.webp"
                   data-gallery-alt="Hai quạt MATIVO X36 và thông tin pin sạc nhanh 24.000mAh"
                   data-gallery-title="Pin 24.000mAh, nguồn 36V"
@@ -258,68 +294,16 @@
                   data-gallery-number="04"
                 >
                   <img src="assets/x36-gallery-power.webp" alt="" width="1254" height="1254" loading="lazy" decoding="async" />
-                  <span><strong>04</strong> Pin và nguồn</span>
+                  <span><strong>04</strong> Pin 36V</span>
                 </button>
-              </div>
 
-              <p class="gallery-hint">Chọn ảnh thu nhỏ để xem chi tiết.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section x24-gallery" id="thu-vien-x24" aria-labelledby="x24-gallery-title">
-        <div class="x24-orb" aria-hidden="true"></div>
-        <div class="container">
-          <div class="section-heading product-gallery-heading x24-heading reveal">
-            <div>
-              <p class="eyebrow eyebrow-dark"><span></span> Mẫu MATIVO X24</p>
-              <h2 id="x24-gallery-title">Thư viện sản phẩm X24</h2>
-            </div>
-            <div class="product-gallery-heading-copy">
-              <p>
-                Khám phá bộ quạt 24V từ trải nghiệm mặc thực tế đến phụ kiện,
-                thiết kế quạt và cấu tạo động cơ không chổi than.
-              </p>
-              <div class="gallery-chips" aria-label="Thông số nổi bật của X24">
-                <span>24V</span><span>20.000mAh</span><span>~6.700 RPM</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="product-gallery-layout reveal" data-product-gallery data-gallery-model="X24">
-            <figure class="gallery-stage">
-              <div class="gallery-stage-top">
-                <span>MATIVO X24</span>
-                <span><strong data-gallery-index>01</strong> / 04</span>
-              </div>
-              <img
-                src="assets/x24-gallery-lifestyle.webp"
-                alt="Người mặc áo điều hòa MATIVO X24 trong môi trường làm việc ngoài trời"
-                width="1214"
-                height="1295"
-                loading="lazy"
-                decoding="async"
-                data-gallery-main
-              />
-              <figcaption>Hình ảnh sản phẩm MATIVO X24</figcaption>
-            </figure>
-
-            <div class="gallery-panel">
-              <div class="gallery-copy" aria-live="polite">
-                <span class="mini-label">GÓC NHÌN 01</span>
-                <h3 data-gallery-title>Mát lành trong từng chuyển động</h3>
-                <p data-gallery-description>
-                  Hai quạt bố trí cân đối hai bên hông, tạo luồng khí liên tục mà vẫn thoải mái vận động.
-                </p>
-              </div>
-
-              <div class="gallery-thumbs" role="tablist" aria-label="Chọn ảnh MATIVO X24">
                 <button
-                  class="gallery-thumb is-active"
+                  class="gallery-thumb"
                   type="button"
                   role="tab"
-                  aria-selected="true"
+                  aria-selected="false"
+                  hidden
+                  data-gallery-item-model="X24"
                   data-gallery-src="assets/x24-gallery-lifestyle.webp"
                   data-gallery-alt="Người mặc áo điều hòa MATIVO X24 trong môi trường làm việc ngoài trời"
                   data-gallery-title="Mát lành trong từng chuyển động"
@@ -327,13 +311,15 @@
                   data-gallery-number="01"
                 >
                   <img src="assets/x24-gallery-lifestyle.webp" alt="" width="1214" height="1295" loading="lazy" decoding="async" />
-                  <span><strong>01</strong> Ứng dụng thực tế</span>
+                  <span><strong>01</strong> Thực tế</span>
                 </button>
                 <button
                   class="gallery-thumb"
                   type="button"
                   role="tab"
                   aria-selected="false"
+                  hidden
+                  data-gallery-item-model="X24"
                   data-gallery-src="assets/x24-gallery-kit.webp"
                   data-gallery-alt="Trọn bộ MATIVO X24 gồm hai quạt, pin N41, dây chia DC và phụ kiện sạc"
                   data-gallery-title="Trọn bộ X24, rõ từng phụ kiện"
@@ -341,13 +327,15 @@
                   data-gallery-number="02"
                 >
                   <img src="assets/x24-gallery-kit.webp" alt="" width="1312" height="1199" loading="lazy" decoding="async" />
-                  <span><strong>02</strong> Bộ sản phẩm</span>
+                  <span><strong>02</strong> Trọn bộ</span>
                 </button>
                 <button
                   class="gallery-thumb"
                   type="button"
                   role="tab"
                   aria-selected="false"
+                  hidden
+                  data-gallery-item-model="X24"
                   data-gallery-src="assets/x24-gallery-overview.webp"
                   data-gallery-alt="Hai quạt không chổi than 24V và pin dành cho áo điều hòa MATIVO X24"
                   data-gallery-title="Quạt không chổi than 24V"
@@ -355,13 +343,15 @@
                   data-gallery-number="03"
                 >
                   <img src="assets/x24-gallery-overview.webp" alt="" width="1230" height="1279" loading="lazy" decoding="async" />
-                  <span><strong>03</strong> Quạt và nguồn</span>
+                  <span><strong>03</strong> Quạt 24V</span>
                 </button>
                 <button
                   class="gallery-thumb"
                   type="button"
                   role="tab"
                   aria-selected="false"
+                  hidden
+                  data-gallery-item-model="X24"
                   data-gallery-src="assets/x24-gallery-bearing.webp"
                   data-gallery-alt="Cấu tạo vòng bi kép và động cơ không chổi than của quạt MATIVO X24"
                   data-gallery-title="Vòng bi kép, vận hành bền bỉ"
@@ -369,11 +359,14 @@
                   data-gallery-number="04"
                 >
                   <img src="assets/x24-gallery-bearing.webp" alt="" width="1254" height="1254" loading="lazy" decoding="async" />
-                  <span><strong>04</strong> Cấu tạo động cơ</span>
+                  <span><strong>04</strong> Vòng bi kép</span>
                 </button>
               </div>
 
-              <p class="gallery-hint">Chọn ảnh thu nhỏ để xem chi tiết.</p>
+              <div class="gallery-panel-footer">
+                <p class="gallery-hint">Chạm ảnh nhỏ, dùng phím mũi tên hoặc vuốt trên ảnh lớn.</p>
+                <a class="button gallery-quote" href="#bao-gia" data-buy-product="X36">Mua ngay X36</a>
+              </div>
             </div>
           </div>
         </div>
@@ -446,6 +439,7 @@
                   <p><strong>Củ sạc nhanh</strong><small>Phụ kiện tùy chọn theo cấu hình đặt hàng</small></p>
                   <em>Tùy chọn</em>
                 </div>
+                <a class="button kit-buy-button" href="#bao-gia" data-buy-product="X24">Mua ngay X24</a>
               </div>
             </div>
 
@@ -499,6 +493,7 @@
                   <p><strong>Củ sạc</strong><small>Cung cấp theo cấu hình đặt hàng đã chọn</small></p>
                   <em>Theo gói</em>
                 </div>
+                <a class="button kit-buy-button" href="#bao-gia" data-buy-product="X36">Mua ngay X36</a>
               </div>
             </div>
           </div>
@@ -528,6 +523,7 @@
                   <li><strong>~6.700 RPM</strong><span>Tốc độ tại 24V</span></li>
                   <li><strong>~320g</strong><span>Khối lượng pin</span></li>
                 </ul>
+                <a class="button product-buy-button button-light" href="#bao-gia" data-buy-product="X24">Mua ngay X24</a>
               </div>
               <img
                 src="assets/x24-kit.webp"
@@ -548,6 +544,7 @@
                   <li><strong>~8.600 RPM</strong><span>Tốc độ danh định</span></li>
                   <li><strong>24,4W</strong><span>Tổng công suất 2 quạt</span></li>
                 </ul>
+                <a class="button product-buy-button" href="#bao-gia" data-buy-product="X36">Mua ngay X36</a>
               </div>
               <img
                 src="assets/x36-gallery-kit.webp"
@@ -721,16 +718,112 @@
         </div>
       </section>
 
-      <section class="final-cta" aria-labelledby="cta-title">
-        <div class="container final-cta-inner reveal">
-          <div>
-            <p class="eyebrow"><span></span> MATIVO X24 &amp; X36</p>
-            <h2 id="cta-title">Sẵn sàng cho một ngày làm việc mát hơn?</h2>
+      <section class="final-cta quote-section" id="bao-gia" aria-labelledby="quote-title">
+        <div class="container quote-layout">
+          <div class="quote-copy reveal">
+            <p class="eyebrow"><span></span> Tư vấn MATIVO X24 &amp; X36</p>
+            <h2 id="quote-title">Để lại thông tin.<br />Nhận báo giá phù hợp.</h2>
+            <p>
+              Cho chúng tôi biết phiên bản và số lượng bạn quan tâm. Đội ngũ MATIVO sẽ
+              liên hệ tư vấn cấu hình, phụ kiện và mức giá phù hợp với nhu cầu thực tế.
+            </p>
+            <ul class="quote-benefits">
+              <li><span>01</span>Tư vấn đúng mẫu X24 hoặc X36</li>
+              <li><span>02</span>Báo giá theo số lượng đặt hàng</li>
+              <li><span>03</span>Xác nhận phụ kiện đi kèm</li>
+            </ul>
           </div>
-          <div class="cta-copy">
-            <p>Chọn phiên bản MATIVO phù hợp với môi trường làm việc và nhu cầu làm mát của bạn.</p>
-            <a class="button button-light" href="#bo-san-pham">Xem lại bộ sản phẩm</a>
-          </div>
+
+          <form
+            class="quote-form reveal reveal-delay-1"
+            action="https://formsubmit.co/tongbao2088@gmail.com"
+            method="POST"
+            data-quote-form
+          >
+            <button class="quote-form-close" type="button" aria-label="Đóng biểu mẫu mua hàng" data-quote-form-close>×</button>
+            <input type="hidden" name="_subject" value="Yêu cầu báo giá mới từ landing page MATIVO" />
+            <input type="hidden" name="_template" value="table" />
+            <input
+              type="hidden"
+              name="_autoresponse"
+              value="MATIVO đã nhận được yêu cầu báo giá của bạn. Đội ngũ tư vấn sẽ liên hệ trong thời gian sớm nhất."
+            />
+            <input type="hidden" name="_next" value="" data-form-next />
+            <input class="form-honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+            <div class="form-heading">
+              <span class="mini-label">YÊU CẦU BÁO GIÁ</span>
+              <h3 id="quote-form-title">Thông tin của bạn</h3>
+              <p>Các mục có dấu * là bắt buộc.</p>
+            </div>
+
+            <div class="form-success" role="status" hidden data-form-success>
+              <strong>Đã gửi yêu cầu thành công.</strong>
+              <span>MATIVO sẽ liên hệ với bạn trong thời gian sớm nhất.</span>
+            </div>
+
+            <div class="form-grid">
+              <label class="form-field">
+                <span>Họ và tên *</span>
+                <input type="text" name="Họ và tên" autocomplete="name" placeholder="Nguyễn Văn A" required />
+              </label>
+
+              <label class="form-field">
+                <span>Số điện thoại *</span>
+                <input
+                  type="tel"
+                  name="Số điện thoại"
+                  autocomplete="tel"
+                  inputmode="tel"
+                  pattern="[0-9+ .-]{9,16}"
+                  placeholder="09xx xxx xxx"
+                  title="Vui lòng nhập số điện thoại từ 9 đến 16 ký tự."
+                  required
+                />
+              </label>
+
+              <label class="form-field">
+                <span>Email *</span>
+                <input type="email" name="email" autocomplete="email" placeholder="ban@email.com" required />
+              </label>
+
+              <label class="form-field">
+                <span>Sản phẩm quan tâm *</span>
+                <select name="Sản phẩm quan tâm" required data-product-select>
+                  <option value="">Chọn phiên bản</option>
+                  <option value="MATIVO X24">MATIVO X24 · 24V</option>
+                  <option value="MATIVO X36">MATIVO X36 · 36V</option>
+                  <option value="Cần tư vấn">Tôi cần được tư vấn</option>
+                </select>
+              </label>
+
+              <label class="form-field">
+                <span>Số lượng dự kiến *</span>
+                <input type="number" name="Số lượng dự kiến" min="1" step="1" inputmode="numeric" placeholder="Ví dụ: 10" required />
+              </label>
+
+              <label class="form-field">
+                <span>Tỉnh / thành phố</span>
+                <input type="text" name="Tỉnh / thành phố" autocomplete="address-level1" placeholder="Ví dụ: Hà Nội" />
+              </label>
+
+              <label class="form-field form-field-full">
+                <span>Nhu cầu hoặc ghi chú</span>
+                <textarea name="Nhu cầu hoặc ghi chú" rows="4" placeholder="Môi trường sử dụng, phụ kiện cần thêm hoặc thời gian muốn nhận hàng..."></textarea>
+              </label>
+            </div>
+
+            <label class="form-consent">
+              <input type="checkbox" name="Đồng ý liên hệ" value="Có" required />
+              <span>Tôi đồng ý để MATIVO liên hệ tư vấn và gửi báo giá theo thông tin đã cung cấp.</span>
+            </label>
+
+            <button class="button quote-submit" type="submit" data-submit-button>
+              Gửi yêu cầu báo giá
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" /></svg>
+            </button>
+            <p class="form-note">Thông tin chỉ được sử dụng để tư vấn và phản hồi yêu cầu báo giá.</p>
+          </form>
         </div>
       </section>
     </main>
@@ -749,6 +842,27 @@
       </div>
     </footer>
 
-    <a class="mobile-cta" href="#bo-san-pham">Xem bộ X24 &amp; X36</a>
+    <button class="quote-modal-backdrop" type="button" aria-label="Đóng biểu mẫu mua hàng" hidden data-quote-backdrop></button>
+
+    <div class="image-viewer" role="dialog" aria-modal="true" aria-label="Xem ảnh sản phẩm phóng to" hidden data-image-viewer>
+      <button class="image-viewer-backdrop" type="button" aria-label="Đóng ảnh phóng to" data-viewer-close></button>
+      <div class="image-viewer-dialog">
+        <div class="image-viewer-toolbar">
+          <p><strong data-viewer-title>Ảnh sản phẩm MATIVO</strong><span data-viewer-zoom-output>100%</span></p>
+          <div>
+            <button type="button" aria-label="Thu nhỏ ảnh" title="Thu nhỏ" data-viewer-zoom-out>−</button>
+            <button type="button" aria-label="Đặt lại kích thước ảnh" title="Kích thước ban đầu" data-viewer-zoom-reset>100%</button>
+            <button type="button" aria-label="Phóng to ảnh" title="Phóng to" data-viewer-zoom-in>+</button>
+            <button class="image-viewer-close" type="button" aria-label="Đóng" title="Đóng" data-viewer-close>×</button>
+          </div>
+        </div>
+        <div class="image-viewer-canvas" data-viewer-canvas>
+          <img src="" alt="" draggable="false" data-viewer-image />
+        </div>
+        <p class="image-viewer-help">Dùng nút + / − hoặc lăn chuột để phóng to, thu nhỏ. Kéo ảnh khi đang phóng to.</p>
+      </div>
+    </div>
+
+    <a class="mobile-cta" href="#bao-gia">Nhận báo giá X24 / X36</a>
   </body>
 </html>
