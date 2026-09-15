@@ -28,8 +28,8 @@
       document.documentElement.classList.add("js");
       if ("scrollRestoration" in window.history) window.history.scrollRestoration = "manual";
     </script>
-    <link rel="stylesheet" href="styles.css?v=20260915-3" />
-    <script src="script.js?v=20260915-3" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20260915-4" />
+    <script src="script.js?v=20260915-4" defer></script>
   </head>
 
   <body>
@@ -189,220 +189,186 @@
         id="san-pham"
         aria-labelledby="product-gallery-title"
         data-product-showcase
-        data-active-model="X36"
       >
         <div class="product-showcase-orb" aria-hidden="true"></div>
         <div class="container">
           <div class="section-heading product-gallery-heading reveal">
             <div>
               <p class="eyebrow"><span></span> Hai cấu hình MATIVO</p>
-              <h2 id="product-gallery-title">Một thư viện.<br />Trọn bộ X24 &amp; X36.</h2>
+              <h2 id="product-gallery-title">X24 phía trên.<br />X36 ngay bên dưới.</h2>
             </div>
             <div class="product-gallery-heading-copy">
               <p>
-                Chuyển nhanh giữa hai mẫu rồi vuốt trực tiếp trên ảnh để xem trọn bộ,
-                cấu tạo quạt, pin và trải nghiệm sử dụng thực tế.
+                Không cần bấm chuyển mẫu. Xem trọn bộ X24 trước, kéo xuống để xem X36;
+                trong từng mẫu, vuốt trực tiếp trên ảnh để đổi góc nhìn.
               </p>
-              <div class="model-switch" role="tablist" aria-label="Chọn phiên bản MATIVO">
-                <button type="button" role="tab" aria-selected="false" data-gallery-model-button="X24">
-                  <strong>X24</strong><span>24V · 20.000mAh</span>
-                </button>
-                <button class="is-active" type="button" role="tab" aria-selected="true" data-gallery-model-button="X36">
-                  <strong>X36</strong><span>36V · 24.000mAh</span>
-                </button>
-              </div>
             </div>
           </div>
 
-          <div class="product-gallery-layout reveal" data-product-gallery data-gallery-model="X36">
-            <figure
-              class="gallery-stage"
-              tabindex="0"
-              aria-label="Thư viện ảnh sản phẩm MATIVO"
-              aria-roledescription="carousel"
-              data-gallery-stage
-            >
-              <div class="gallery-stage-top">
-                <span data-gallery-model-label>MATIVO X36</span>
-                <span><strong data-gallery-index>01</strong> / <span data-gallery-total>04</span></span>
-              </div>
-              <div class="gallery-image-wrap">
-                <img
-                  src="assets/x36-gallery-lifestyle.webp"
-                  alt="Người mặc áo điều hòa MATIVO X36 cùng quạt, pin và phụ kiện đi kèm"
-                  width="1215"
-                  height="1295"
-                  loading="lazy"
-                  decoding="async"
-                  draggable="false"
-                  data-gallery-main
-                />
-                <button class="gallery-arrow gallery-arrow-prev" type="button" aria-label="Xem ảnh trước" data-gallery-prev>
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
-                </button>
-                <button class="gallery-arrow gallery-arrow-next" type="button" aria-label="Xem ảnh tiếp theo" data-gallery-next>
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
-                </button>
-                <button class="gallery-zoom-button" type="button" aria-label="Mở ảnh và phóng to" data-gallery-zoom-open>
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <circle cx="11" cy="11" r="6.5" />
-                    <path d="m16 16 4 4M11 8v6M8 11h6" />
-                  </svg>
-                  <span>Phóng to</span>
-                </button>
-              </div>
-              <figcaption><span aria-hidden="true">↔</span> Vuốt trái hoặc phải để đổi ảnh</figcaption>
-            </figure>
+          <div class="product-gallery-stack">
+            <article class="product-gallery-block product-gallery-block-x24 reveal" id="san-pham-x24" aria-labelledby="x24-gallery-heading">
+              <header class="product-model-heading">
+                <div>
+                  <span>01 · PHIÊN BẢN 24V</span>
+                  <h3 id="x24-gallery-heading">MATIVO X24</h3>
+                </div>
+                <p>Gọn nhẹ · Pin 20.000mAh · 4 cấp độ gió</p>
+              </header>
 
-            <div class="gallery-panel">
-              <div class="gallery-copy" aria-live="polite">
-                <span class="mini-label">X36 · GÓC NHÌN 01</span>
-                <h3 data-gallery-title>Trọn bộ X36 cho ngày làm việc nóng bức</h3>
-                <p data-gallery-description>
-                  Hai quạt 36V kết hợp pin 24.000mAh, dây sạc và phụ kiện để tạo luồng khí liên tục khi làm việc ngoài trời.
-                </p>
-              </div>
+              <div class="product-gallery-layout" data-product-gallery data-gallery-model="X24">
+                <figure class="gallery-stage" tabindex="0" aria-label="Thư viện ảnh MATIVO X24" aria-roledescription="carousel" data-gallery-stage>
+                  <div class="gallery-stage-top">
+                    <span>MATIVO X24</span>
+                    <span><strong data-gallery-index>01</strong> / <span data-gallery-total>04</span></span>
+                  </div>
+                  <div class="gallery-image-wrap">
+                    <img
+                      src="assets/x24-gallery-lifestyle.webp"
+                      alt="Người mặc áo điều hòa MATIVO X24 trong môi trường làm việc ngoài trời"
+                      width="1214"
+                      height="1295"
+                      loading="lazy"
+                      decoding="async"
+                      draggable="false"
+                      data-gallery-main
+                    />
+                    <button class="gallery-arrow gallery-arrow-prev" type="button" aria-label="Xem ảnh X24 trước" data-gallery-prev>
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+                    </button>
+                    <button class="gallery-arrow gallery-arrow-next" type="button" aria-label="Xem ảnh X24 tiếp theo" data-gallery-next>
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+                    </button>
+                    <button class="gallery-zoom-button" type="button" aria-label="Phóng to ảnh MATIVO X24" data-gallery-zoom-open>
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="11" cy="11" r="6.5" />
+                        <path d="m16 16 4 4M11 8v6M8 11h6" />
+                      </svg>
+                      <span>Phóng to</span>
+                    </button>
+                  </div>
+                  <figcaption><span aria-hidden="true">↔</span> Vuốt trái hoặc phải để đổi ảnh X24</figcaption>
+                </figure>
 
-              <div class="gallery-panel-footer">
-                <a class="button gallery-quote" href="#bao-gia" data-buy-product="X36">Mua ngay X36</a>
-              </div>
-            </div>
+                <div class="gallery-panel">
+                  <div class="gallery-copy" aria-live="polite">
+                    <span class="mini-label">X24 · GÓC NHÌN 01</span>
+                    <h3 data-gallery-title>Mát lành trong từng chuyển động</h3>
+                    <p data-gallery-description>Hai quạt bố trí cân đối hai bên hông, tạo luồng khí liên tục mà vẫn thoải mái vận động.</p>
+                  </div>
+                  <div class="gallery-panel-footer">
+                    <a class="button gallery-quote" href="#bao-gia" data-buy-product="X24">Mua ngay X24</a>
+                  </div>
+                </div>
 
-            <div class="gallery-browser">
-              <div class="gallery-browser-heading">
-                <strong>Ảnh chi tiết <span data-gallery-browser-model>X36</span></strong>
-                <span>Chạm để xem · vuốt ảnh lớn để chuyển</span>
+                <div class="gallery-browser">
+                  <div class="gallery-browser-heading">
+                    <strong>Ảnh chi tiết <span>X24</span></strong>
+                    <span>Chạm để xem · vuốt ảnh lớn để chuyển</span>
+                  </div>
+                  <div class="gallery-thumbs" role="tablist" aria-label="Chọn ảnh sản phẩm MATIVO X24">
+                    <button class="gallery-thumb is-active" type="button" role="tab" aria-selected="true" data-gallery-item-model="X24" data-gallery-src="assets/x24-gallery-lifestyle.webp" data-gallery-alt="Người mặc áo điều hòa MATIVO X24 trong môi trường làm việc ngoài trời" data-gallery-title="Mát lành trong từng chuyển động" data-gallery-description="Hai quạt bố trí cân đối hai bên hông, tạo luồng khí liên tục mà vẫn thoải mái vận động." data-gallery-number="01">
+                      <img src="assets/x24-gallery-lifestyle.webp" alt="" width="1214" height="1295" loading="lazy" decoding="async" />
+                      <span><strong>01</strong> Thực tế</span>
+                    </button>
+                    <button class="gallery-thumb" type="button" role="tab" aria-selected="false" data-gallery-item-model="X24" data-gallery-src="assets/x24-gallery-kit.webp" data-gallery-alt="Trọn bộ MATIVO X24 gồm hai quạt, pin N41, dây chia DC và phụ kiện sạc" data-gallery-title="Trọn bộ X24, rõ từng phụ kiện" data-gallery-description="Bộ tiêu chuẩn gồm hai quạt 24V, pin N41, cáp chuyển đổi DC và cáp sạc Type-C; củ sạc là tùy chọn." data-gallery-number="02">
+                      <img src="assets/x24-gallery-kit.webp" alt="" width="1312" height="1199" loading="lazy" decoding="async" />
+                      <span><strong>02</strong> Trọn bộ</span>
+                    </button>
+                    <button class="gallery-thumb" type="button" role="tab" aria-selected="false" data-gallery-item-model="X24" data-gallery-src="assets/x24-gallery-overview.webp" data-gallery-alt="Hai quạt không chổi than 24V và pin dành cho áo điều hòa MATIVO X24" data-gallery-title="Quạt không chổi than 24V" data-gallery-description="Lực gió mạnh và ổn định, nhiều mức điều chỉnh tốc độ, phù hợp nhiều nhu cầu sử dụng." data-gallery-number="03">
+                      <img src="assets/x24-gallery-overview.webp" alt="" width="1230" height="1279" loading="lazy" decoding="async" />
+                      <span><strong>03</strong> Quạt 24V</span>
+                    </button>
+                    <button class="gallery-thumb" type="button" role="tab" aria-selected="false" data-gallery-item-model="X24" data-gallery-src="assets/x24-gallery-bearing.webp" data-gallery-alt="Cấu tạo vòng bi kép và động cơ không chổi than của quạt MATIVO X24" data-gallery-title="Vòng bi kép, vận hành bền bỉ" data-gallery-description="Động cơ không chổi than kết hợp vòng bi kép giúp quạt vận hành êm và duy trì lực gió lâu dài." data-gallery-number="04">
+                      <img src="assets/x24-gallery-bearing.webp" alt="" width="1254" height="1254" loading="lazy" decoding="async" />
+                      <span><strong>04</strong> Vòng bi kép</span>
+                    </button>
+                  </div>
+                  <p class="gallery-hint"><span aria-hidden="true">↔</span> Kéo ngang để xem toàn bộ ảnh X24.</p>
+                </div>
               </div>
+            </article>
 
-              <div class="gallery-thumbs" role="tablist" aria-label="Chọn ảnh sản phẩm MATIVO">
-                <button
-                  class="gallery-thumb is-active"
-                  type="button"
-                  role="tab"
-                  aria-selected="true"
-                  data-gallery-item-model="X36"
-                  data-gallery-src="assets/x36-gallery-lifestyle.webp"
-                  data-gallery-alt="Người mặc áo điều hòa MATIVO X36 cùng quạt, pin và phụ kiện đi kèm"
-                  data-gallery-title="Trọn bộ X36 cho ngày làm việc nóng bức"
-                  data-gallery-description="Hai quạt 36V kết hợp pin 24.000mAh, dây sạc và phụ kiện để tạo luồng khí liên tục khi làm việc ngoài trời."
-                  data-gallery-number="01"
-                >
-                  <img src="assets/x36-gallery-lifestyle.webp" alt="" width="1215" height="1295" loading="lazy" decoding="async" />
-                  <span><strong>01</strong> Thực tế</span>
-                </button>
-                <button
-                  class="gallery-thumb"
-                  type="button"
-                  role="tab"
-                  aria-selected="false"
-                  data-gallery-item-model="X36"
-                  data-gallery-src="assets/x36-gallery-kit.webp"
-                  data-gallery-alt="Trọn bộ MATIVO X36 gồm hai quạt, pin, dây kết nối và bộ sạc"
-                  data-gallery-title="Trọn bộ X36 rõ từng thành phần"
-                  data-gallery-description="Bộ sản phẩm gồm hai quạt 36V, pin 24.000mAh, dây kết nối và phụ kiện sạc."
-                  data-gallery-number="02"
-                >
-                  <img src="assets/x36-gallery-kit.webp" alt="" width="1254" height="1254" loading="lazy" decoding="async" />
-                  <span><strong>02</strong> Trọn bộ</span>
-                </button>
-                <button
-                  class="gallery-thumb"
-                  type="button"
-                  role="tab"
-                  aria-selected="false"
-                  data-gallery-item-model="X36"
-                  data-gallery-src="assets/x36-gallery-fan.webp"
-                  data-gallery-alt="Cấu trúc động cơ không chổi than của quạt MATIVO X36"
-                  data-gallery-title="Động cơ không chổi than 36V"
-                  data-gallery-description="Cấu trúc quạt hướng đến lực gió mạnh, vận hành êm và phù hợp môi trường nhiệt độ cao."
-                  data-gallery-number="03"
-                >
-                  <img src="assets/x36-gallery-fan.webp" alt="" width="1254" height="1254" loading="lazy" decoding="async" />
-                  <span><strong>03</strong> Động cơ</span>
-                </button>
-                <button
-                  class="gallery-thumb"
-                  type="button"
-                  role="tab"
-                  aria-selected="false"
-                  data-gallery-item-model="X36"
-                  data-gallery-src="assets/x36-gallery-power.webp"
-                  data-gallery-alt="Hai quạt MATIVO X36 và thông tin pin sạc nhanh 24.000mAh"
-                  data-gallery-title="Pin 24.000mAh, nguồn 36V"
-                  data-gallery-description="Pin dung lượng lớn hỗ trợ sạc nhanh, kết hợp nguồn 36V để cấp năng lượng cho bộ quạt."
-                  data-gallery-number="04"
-                >
-                  <img src="assets/x36-gallery-power.webp" alt="" width="1254" height="1254" loading="lazy" decoding="async" />
-                  <span><strong>04</strong> Pin 36V</span>
-                </button>
+            <article class="product-gallery-block product-gallery-block-x36 reveal" id="san-pham-x36" aria-labelledby="x36-gallery-heading">
+              <header class="product-model-heading">
+                <div>
+                  <span>02 · PHIÊN BẢN 36V</span>
+                  <h3 id="x36-gallery-heading">MATIVO X36</h3>
+                </div>
+                <p>Hiệu năng cao · Pin 24.000mAh · 5 cấp độ gió</p>
+              </header>
 
-                <button
-                  class="gallery-thumb"
-                  type="button"
-                  role="tab"
-                  aria-selected="false"
-                  hidden
-                  data-gallery-item-model="X24"
-                  data-gallery-src="assets/x24-gallery-lifestyle.webp"
-                  data-gallery-alt="Người mặc áo điều hòa MATIVO X24 trong môi trường làm việc ngoài trời"
-                  data-gallery-title="Mát lành trong từng chuyển động"
-                  data-gallery-description="Hai quạt bố trí cân đối hai bên hông, tạo luồng khí liên tục mà vẫn thoải mái vận động."
-                  data-gallery-number="01"
-                >
-                  <img src="assets/x24-gallery-lifestyle.webp" alt="" width="1214" height="1295" loading="lazy" decoding="async" />
-                  <span><strong>01</strong> Thực tế</span>
-                </button>
-                <button
-                  class="gallery-thumb"
-                  type="button"
-                  role="tab"
-                  aria-selected="false"
-                  hidden
-                  data-gallery-item-model="X24"
-                  data-gallery-src="assets/x24-gallery-kit.webp"
-                  data-gallery-alt="Trọn bộ MATIVO X24 gồm hai quạt, pin N41, dây chia DC và phụ kiện sạc"
-                  data-gallery-title="Trọn bộ X24, rõ từng phụ kiện"
-                  data-gallery-description="Bộ tiêu chuẩn gồm hai quạt 24V, pin N41, cáp chuyển đổi DC và cáp sạc Type-C; củ sạc là tùy chọn."
-                  data-gallery-number="02"
-                >
-                  <img src="assets/x24-gallery-kit.webp" alt="" width="1312" height="1199" loading="lazy" decoding="async" />
-                  <span><strong>02</strong> Trọn bộ</span>
-                </button>
-                <button
-                  class="gallery-thumb"
-                  type="button"
-                  role="tab"
-                  aria-selected="false"
-                  hidden
-                  data-gallery-item-model="X24"
-                  data-gallery-src="assets/x24-gallery-overview.webp"
-                  data-gallery-alt="Hai quạt không chổi than 24V và pin dành cho áo điều hòa MATIVO X24"
-                  data-gallery-title="Quạt không chổi than 24V"
-                  data-gallery-description="Lực gió mạnh và ổn định, nhiều mức điều chỉnh tốc độ, phù hợp nhiều nhu cầu sử dụng."
-                  data-gallery-number="03"
-                >
-                  <img src="assets/x24-gallery-overview.webp" alt="" width="1230" height="1279" loading="lazy" decoding="async" />
-                  <span><strong>03</strong> Quạt 24V</span>
-                </button>
-                <button
-                  class="gallery-thumb"
-                  type="button"
-                  role="tab"
-                  aria-selected="false"
-                  hidden
-                  data-gallery-item-model="X24"
-                  data-gallery-src="assets/x24-gallery-bearing.webp"
-                  data-gallery-alt="Cấu tạo vòng bi kép và động cơ không chổi than của quạt MATIVO X24"
-                  data-gallery-title="Vòng bi kép, vận hành bền bỉ"
-                  data-gallery-description="Động cơ không chổi than kết hợp vòng bi kép giúp quạt vận hành êm và duy trì lực gió lâu dài."
-                  data-gallery-number="04"
-                >
-                  <img src="assets/x24-gallery-bearing.webp" alt="" width="1254" height="1254" loading="lazy" decoding="async" />
-                  <span><strong>04</strong> Vòng bi kép</span>
-                </button>
+              <div class="product-gallery-layout" data-product-gallery data-gallery-model="X36">
+                <figure class="gallery-stage" tabindex="0" aria-label="Thư viện ảnh MATIVO X36" aria-roledescription="carousel" data-gallery-stage>
+                  <div class="gallery-stage-top">
+                    <span>MATIVO X36</span>
+                    <span><strong data-gallery-index>01</strong> / <span data-gallery-total>04</span></span>
+                  </div>
+                  <div class="gallery-image-wrap">
+                    <img
+                      src="assets/x36-gallery-lifestyle.webp"
+                      alt="Người mặc áo điều hòa MATIVO X36 cùng quạt, pin và phụ kiện đi kèm"
+                      width="1215"
+                      height="1295"
+                      loading="lazy"
+                      decoding="async"
+                      draggable="false"
+                      data-gallery-main
+                    />
+                    <button class="gallery-arrow gallery-arrow-prev" type="button" aria-label="Xem ảnh X36 trước" data-gallery-prev>
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+                    </button>
+                    <button class="gallery-arrow gallery-arrow-next" type="button" aria-label="Xem ảnh X36 tiếp theo" data-gallery-next>
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+                    </button>
+                    <button class="gallery-zoom-button" type="button" aria-label="Phóng to ảnh MATIVO X36" data-gallery-zoom-open>
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="11" cy="11" r="6.5" />
+                        <path d="m16 16 4 4M11 8v6M8 11h6" />
+                      </svg>
+                      <span>Phóng to</span>
+                    </button>
+                  </div>
+                  <figcaption><span aria-hidden="true">↔</span> Vuốt trái hoặc phải để đổi ảnh X36</figcaption>
+                </figure>
+
+                <div class="gallery-panel">
+                  <div class="gallery-copy" aria-live="polite">
+                    <span class="mini-label">X36 · GÓC NHÌN 01</span>
+                    <h3 data-gallery-title>Trọn bộ X36 cho ngày làm việc nóng bức</h3>
+                    <p data-gallery-description>Hai quạt 36V kết hợp pin 24.000mAh, dây sạc và phụ kiện để tạo luồng khí liên tục khi làm việc ngoài trời.</p>
+                  </div>
+                  <div class="gallery-panel-footer">
+                    <a class="button gallery-quote" href="#bao-gia" data-buy-product="X36">Mua ngay X36</a>
+                  </div>
+                </div>
+
+                <div class="gallery-browser">
+                  <div class="gallery-browser-heading">
+                    <strong>Ảnh chi tiết <span>X36</span></strong>
+                    <span>Chạm để xem · vuốt ảnh lớn để chuyển</span>
+                  </div>
+                  <div class="gallery-thumbs" role="tablist" aria-label="Chọn ảnh sản phẩm MATIVO X36">
+                    <button class="gallery-thumb is-active" type="button" role="tab" aria-selected="true" data-gallery-item-model="X36" data-gallery-src="assets/x36-gallery-lifestyle.webp" data-gallery-alt="Người mặc áo điều hòa MATIVO X36 cùng quạt, pin và phụ kiện đi kèm" data-gallery-title="Trọn bộ X36 cho ngày làm việc nóng bức" data-gallery-description="Hai quạt 36V kết hợp pin 24.000mAh, dây sạc và phụ kiện để tạo luồng khí liên tục khi làm việc ngoài trời." data-gallery-number="01">
+                      <img src="assets/x36-gallery-lifestyle.webp" alt="" width="1215" height="1295" loading="lazy" decoding="async" />
+                      <span><strong>01</strong> Thực tế</span>
+                    </button>
+                    <button class="gallery-thumb" type="button" role="tab" aria-selected="false" data-gallery-item-model="X36" data-gallery-src="assets/x36-gallery-kit.webp" data-gallery-alt="Trọn bộ MATIVO X36 gồm hai quạt, pin, dây kết nối và bộ sạc" data-gallery-title="Trọn bộ X36 rõ từng thành phần" data-gallery-description="Bộ sản phẩm gồm hai quạt 36V, pin 24.000mAh, dây kết nối và phụ kiện sạc." data-gallery-number="02">
+                      <img src="assets/x36-gallery-kit.webp" alt="" width="1254" height="1254" loading="lazy" decoding="async" />
+                      <span><strong>02</strong> Trọn bộ</span>
+                    </button>
+                    <button class="gallery-thumb" type="button" role="tab" aria-selected="false" data-gallery-item-model="X36" data-gallery-src="assets/x36-gallery-fan.webp" data-gallery-alt="Cấu trúc động cơ không chổi than của quạt MATIVO X36" data-gallery-title="Động cơ không chổi than 36V" data-gallery-description="Cấu trúc quạt hướng đến lực gió mạnh, vận hành êm và phù hợp môi trường nhiệt độ cao." data-gallery-number="03">
+                      <img src="assets/x36-gallery-fan.webp" alt="" width="1254" height="1254" loading="lazy" decoding="async" />
+                      <span><strong>03</strong> Động cơ</span>
+                    </button>
+                    <button class="gallery-thumb" type="button" role="tab" aria-selected="false" data-gallery-item-model="X36" data-gallery-src="assets/x36-gallery-power.webp" data-gallery-alt="Hai quạt MATIVO X36 và thông tin pin sạc nhanh 24.000mAh" data-gallery-title="Pin 24.000mAh, nguồn 36V" data-gallery-description="Pin dung lượng lớn hỗ trợ sạc nhanh, kết hợp nguồn 36V để cấp năng lượng cho bộ quạt." data-gallery-number="04">
+                      <img src="assets/x36-gallery-power.webp" alt="" width="1254" height="1254" loading="lazy" decoding="async" />
+                      <span><strong>04</strong> Pin 36V</span>
+                    </button>
+                  </div>
+                  <p class="gallery-hint"><span aria-hidden="true">↔</span> Kéo ngang để xem toàn bộ ảnh X36.</p>
+                </div>
               </div>
-              <p class="gallery-hint"><span aria-hidden="true">↔</span> Kéo ngang để xem toàn bộ ảnh sản phẩm.</p>
-            </div>
+            </article>
           </div>
         </div>
       </section>

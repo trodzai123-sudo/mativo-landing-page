@@ -89,26 +89,22 @@ if ("IntersectionObserver" in window) {
   revealElements.forEach((element) => element.classList.add("is-visible"));
 }
 
-const productShowcase = document.querySelector("[data-product-showcase]");
-const productGallery = productShowcase?.querySelector("[data-product-gallery]");
+const productGalleries = [...document.querySelectorAll("[data-product-gallery]")];
 
-if (productShowcase && productGallery) {
+productGalleries.forEach((productGallery) => {
   const galleryItems = [...productGallery.querySelectorAll("[data-gallery-src]")];
-  const modelButtons = [...productShowcase.querySelectorAll("[data-gallery-model-button]")];
   const galleryImage = productGallery.querySelector("[data-gallery-main]");
   const galleryTitle = productGallery.querySelector("[data-gallery-title]");
   const galleryDescription = productGallery.querySelector("[data-gallery-description]");
   const galleryIndex = productGallery.querySelector("[data-gallery-index]");
   const galleryTotal = productGallery.querySelector("[data-gallery-total]");
   const galleryKicker = productGallery.querySelector(".gallery-copy .mini-label");
-  const galleryModelLabel = productGallery.querySelector("[data-gallery-model-label]");
-  const galleryBrowserModel = productGallery.querySelector("[data-gallery-browser-model]");
   const galleryThumbs = productGallery.querySelector(".gallery-thumbs");
   const galleryStage = productGallery.querySelector("[data-gallery-stage]");
   const previousButton = productGallery.querySelector("[data-gallery-prev]");
   const nextButton = productGallery.querySelector("[data-gallery-next]");
-  const buyButton = productGallery.querySelector("[data-buy-product]");
-  let activeItems = [];
+  const model = productGallery.dataset.galleryModel || galleryItems[0]?.dataset.galleryItemModel || "MATIVO";
+  const activeItems = galleryItems;
   let activeIndex = 0;
   let imageRequest = 0;
   let touchStart = null;
@@ -138,16 +134,16 @@ if (productShowcase && productGallery) {
     });
     keepThumbnailVisible(button, animate);
 
-    const model = button.dataset.galleryItemModel || productGallery.dataset.galleryModel;
+    const itemModel = button.dataset.galleryItemModel || model;
     if (galleryTitle) galleryTitle.textContent = button.dataset.galleryTitle;
     if (galleryDescription) galleryDescription.textContent = button.dataset.galleryDescription;
     if (galleryIndex) galleryIndex.textContent = button.dataset.galleryNumber;
-    if (galleryKicker) galleryKicker.textContent = `${model} · GÓC NHÌN ${button.dataset.galleryNumber}`;
+    if (galleryKicker) galleryKicker.textContent = `${itemModel} · GÓC NHÌN ${button.dataset.galleryNumber}`;
 
     const newSource = button.dataset.gallerySrc;
     const requestId = ++imageRequest;
     if (galleryImage.getAttribute("src") === newSource) {
-      galleryImage.alt = button.dataset.galleryAlt || `Hình ảnh MATIVO ${model}`;
+      galleryImage.alt = button.dataset.galleryAlt || `Hình ảnh MATIVO ${itemModel}`;
       galleryImage.classList.remove("is-changing");
       return;
     }
@@ -156,7 +152,7 @@ if (productShowcase && productGallery) {
     const applyImage = () => {
       if (requestId !== imageRequest) return;
       galleryImage.src = newSource;
-      galleryImage.alt = button.dataset.galleryAlt || `Hình ảnh MATIVO ${model}`;
+      galleryImage.alt = button.dataset.galleryAlt || `Hình ảnh MATIVO ${itemModel}`;
       requestAnimationFrame(() => galleryImage.classList.remove("is-changing"));
     };
 
@@ -172,39 +168,6 @@ if (productShowcase && productGallery) {
     showGalleryItem(activeItems[activeIndex]);
   };
 
-  const selectModel = (model) => {
-    productShowcase.dataset.activeModel = model;
-    productGallery.dataset.galleryModel = model;
-    activeItems = galleryItems.filter((item) => item.dataset.galleryItemModel === model);
-
-    galleryItems.forEach((item) => {
-      const belongsToModel = item.dataset.galleryItemModel === model;
-      item.hidden = !belongsToModel;
-      if (!belongsToModel) {
-        item.classList.remove("is-active");
-        item.setAttribute("aria-selected", "false");
-        item.tabIndex = -1;
-      }
-    });
-
-    modelButtons.forEach((button) => {
-      const isActive = button.dataset.galleryModelButton === model;
-      button.classList.toggle("is-active", isActive);
-      button.setAttribute("aria-selected", String(isActive));
-      button.tabIndex = isActive ? 0 : -1;
-    });
-
-    if (galleryModelLabel) galleryModelLabel.textContent = `MATIVO ${model}`;
-    if (galleryBrowserModel) galleryBrowserModel.textContent = model;
-    if (galleryThumbs) galleryThumbs.setAttribute("aria-label", `Chọn ảnh sản phẩm MATIVO ${model}`);
-    if (galleryTotal) galleryTotal.textContent = String(activeItems.length).padStart(2, "0");
-    if (buyButton) {
-      buyButton.dataset.buyProduct = model;
-      buyButton.textContent = `Mua ngay ${model}`;
-    }
-    showGalleryItem(activeItems[0], false);
-  };
-
   galleryItems.forEach((button) => {
     button.addEventListener("click", () => showGalleryItem(button));
     button.addEventListener("keydown", (event) => {
@@ -212,19 +175,6 @@ if (productShowcase && productGallery) {
       event.preventDefault();
       moveGallery(event.key === "ArrowRight" ? 1 : -1);
       activeItems[activeIndex]?.focus();
-    });
-  });
-
-  modelButtons.forEach((button) => {
-    button.addEventListener("click", () => selectModel(button.dataset.galleryModelButton));
-    button.addEventListener("keydown", (event) => {
-      if (!["ArrowLeft", "ArrowRight"].includes(event.key)) return;
-      event.preventDefault();
-      const currentIndex = modelButtons.indexOf(button);
-      const direction = event.key === "ArrowRight" ? 1 : -1;
-      const nextIndex = (currentIndex + direction + modelButtons.length) % modelButtons.length;
-      modelButtons[nextIndex].focus();
-      selectModel(modelButtons[nextIndex].dataset.galleryModelButton);
     });
   });
 
@@ -260,8 +210,9 @@ if (productShowcase && productGallery) {
     { passive: true },
   );
 
-  selectModel(productShowcase.dataset.activeModel || "X36");
-}
+  if (galleryTotal) galleryTotal.textContent = String(activeItems.length).padStart(2, "0");
+  showGalleryItem(activeItems[0], false);
+});
 
 const runtime = document.querySelector("[data-runtime]");
 
@@ -423,9 +374,9 @@ const viewerImage = imageViewer?.querySelector("[data-viewer-image]");
 const viewerCanvas = imageViewer?.querySelector("[data-viewer-canvas]");
 const viewerTitle = imageViewer?.querySelector("[data-viewer-title]");
 const viewerZoomOutput = imageViewer?.querySelector("[data-viewer-zoom-output]");
-const viewerOpenButton = document.querySelector("[data-gallery-zoom-open]");
+const galleryViewerButtons = [...document.querySelectorAll("[data-gallery-zoom-open]")];
+const galleryMainImages = [...document.querySelectorAll("[data-gallery-main]")];
 const comparisonZoomButton = document.querySelector("[data-comparison-zoom-open]");
-const galleryMainImage = productGallery?.querySelector("[data-gallery-main]");
 const comparisonViewerImage = document.querySelector("[data-comparison-image]");
 let viewerScale = 1;
 let viewerX = 0;
@@ -458,7 +409,7 @@ const resetViewer = () => {
 
 const closeViewer = () => {
   if (!imageViewer || imageViewer.hidden) return;
-  const focusTarget = viewerReturnFocus || viewerOpenButton;
+  const focusTarget = viewerReturnFocus || galleryViewerButtons[0];
   imageViewer.hidden = true;
   document.body.classList.remove("viewer-open");
   resetViewer();
@@ -492,12 +443,20 @@ const bindViewerTrigger = (sourceImage, accessibleLabel) => {
   });
 };
 
-viewerOpenButton?.addEventListener("click", () => openViewer(galleryMainImage, viewerOpenButton));
+galleryViewerButtons.forEach((button) => {
+  const gallery = button.closest("[data-product-gallery]");
+  const galleryMainImage = gallery?.querySelector("[data-gallery-main]");
+  button.addEventListener("click", () => openViewer(galleryMainImage, button));
+});
 comparisonZoomButton?.addEventListener("click", () =>
   openViewer(comparisonViewerImage, comparisonZoomButton),
 );
 
-bindViewerTrigger(galleryMainImage, "Nhấp để phóng to ảnh sản phẩm");
+galleryMainImages.forEach((galleryMainImage) => {
+  const gallery = galleryMainImage.closest("[data-product-gallery]");
+  const model = gallery?.dataset.galleryModel || "MATIVO";
+  bindViewerTrigger(galleryMainImage, `Nhấp để phóng to ảnh sản phẩm ${model}`);
+});
 bindViewerTrigger(comparisonViewerImage, "Nhấp để phóng to banner so sánh X24 và X36");
 
 imageViewer?.querySelectorAll("[data-viewer-close]").forEach((button) => {

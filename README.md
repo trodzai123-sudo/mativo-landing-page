@@ -2,7 +2,7 @@
 
 Landing page tiếng Việt cho hai bộ quạt áo điều hòa MATIVO X24 và X36. Toàn bộ hình ảnh sử dụng trên trang đã được làm sạch chữ Trung; thông tin sản phẩm được trình bày lại bằng HTML tiếng Việt để rõ ràng, dễ đọc và thân thiện với công cụ tìm kiếm.
 
-Trang ưu tiên trải nghiệm xem sản phẩm: banner vuông so sánh hai phiên bản xuất hiện ngay dưới tiêu đề chính, ảnh trọn bộ X24 nằm trong hero, một thư viện tương tác chung cho X24/X36 và khối “Bộ sản phẩm” liệt kê rõ từng thành phần. Thư viện hỗ trợ nút chuyển ảnh, thao tác vuốt, bàn phím và trình xem phóng to/thu nhỏ.
+Trang ưu tiên trải nghiệm xem sản phẩm: banner vuông so sánh hai phiên bản xuất hiện ngay dưới tiêu đề chính, ảnh trọn bộ X24 nằm trong hero, hai thư viện độc lập được xếp X24 phía trên và X36 ngay bên dưới, cùng khối “Bộ sản phẩm” liệt kê rõ từng thành phần. Mỗi thư viện hỗ trợ nút chuyển ảnh, thao tác vuốt, bàn phím và trình xem phóng to/thu nhỏ mà không cần bấm nút chuyển mẫu.
 
 Dải ảnh chi tiết được đặt dưới chân khối sản phẩm; trên mobile, ảnh được phóng lớn thành thanh cuộn ngang để dễ xem và chạm chọn hơn.
 
