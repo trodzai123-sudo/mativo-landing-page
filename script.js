@@ -132,3 +132,97 @@ if (runtime) {
 
 const year = document.querySelector("[data-year]");
 if (year) year.textContent = new Date().getFullYear();
+
+// Giữ nguyên vị trí khối "Trong hộp có gì?" nhưng hiển thị đủ cả X24 và X36.
+const kitSection = document.querySelector("#bo-san-pham");
+
+if (kitSection && !kitSection.querySelector(".kit-showcase-x36")) {
+  const heading = kitSection.querySelector("#kit-title");
+  const intro = kitSection.querySelector(".section-heading > p:not(.eyebrow)");
+  const x24Showcase = kitSection.querySelector(".kit-showcase");
+  const navCta = document.querySelector('.main-nav .button[href="#bo-san-pham"]');
+
+  if (heading) heading.textContent = "Bộ sản phẩm MATIVO X24 & X36";
+  if (intro) {
+    intro.textContent =
+      "Hai cấu hình được trình bày riêng để khách dễ chọn: X24 ưu tiên gọn nhẹ, X36 ưu tiên lực gió và hiệu năng cao hơn.";
+  }
+  if (navCta) navCta.textContent = "Khám phá 2 bộ";
+
+  if (x24Showcase) {
+    x24Showcase.classList.add("kit-showcase-x24");
+
+    const x36Showcase = document.createElement("div");
+    x36Showcase.className = "kit-showcase kit-showcase-x36 is-visible";
+    x36Showcase.innerHTML = `
+      <figure class="kit-photo">
+        <img
+          src="assets/x36-gallery-kit.webp"
+          alt="Hai quạt MATIVO X36, pin 36V 24.000mAh, dây kết nối và phụ kiện sạc"
+          width="1254"
+          height="1254"
+          loading="lazy"
+        />
+        <figcaption>Ảnh minh họa các thành phần của bộ MATIVO X36.</figcaption>
+      </figure>
+
+      <div class="kit-content">
+        <div class="kit-title-row">
+          <div>
+            <span class="mini-label">MATIVO</span>
+            <h3>X36 Cooling Kit</h3>
+          </div>
+          <span class="kit-status">Bộ hiệu năng cao</span>
+        </div>
+
+        <div class="kit-list" aria-label="Danh sách thành phần MATIVO X36">
+          <article class="kit-item">
+            <span class="kit-qty">02</span>
+            <div><h4>Quạt X36 36V</h4><p>Không chổi than, ổ bi kép, lực gió cao</p></div>
+            <span class="included">Có sẵn</span>
+          </article>
+          <article class="kit-item">
+            <span class="kit-qty">01</span>
+            <div><h4>Pin X36</h4><p>24.000mAh, màn hình LED hiển thị dung lượng</p></div>
+            <span class="included">Có sẵn</span>
+          </article>
+          <article class="kit-item">
+            <span class="kit-qty">01</span>
+            <div><h4>Dây chia DC</h4><p>Một nguồn kết nối đồng thời hai quạt</p></div>
+            <span class="included">Có sẵn</span>
+          </article>
+          <article class="kit-item">
+            <span class="kit-qty">01</span>
+            <div><h4>Cáp sạc</h4><p>Phụ kiện sạc dành cho pin X36</p></div>
+            <span class="included">Có sẵn</span>
+          </article>
+        </div>
+
+        <div class="optional-item">
+          <span>+</span>
+          <p><strong>Củ sạc nhanh</strong><small>Phụ kiện theo cấu hình đặt hàng</small></p>
+          <em>Tùy cấu hình</em>
+        </div>
+      </div>
+    `;
+
+    x24Showcase.insertAdjacentElement("afterend", x36Showcase);
+  }
+
+  const style = document.createElement("style");
+  style.textContent = `
+    #bo-san-pham .kit-showcase + .kit-showcase { margin-top: 28px; }
+    #bo-san-pham .kit-showcase-x24 { border-top: 3px solid #1688f5; }
+    #bo-san-pham .kit-showcase-x36 { border-top: 3px solid #ff6b21; }
+    #bo-san-pham .kit-showcase-x36 .kit-qty { color: #ff6b21; }
+    #bo-san-pham .kit-showcase-x36 .kit-status {
+      border-color: #ffd4bf;
+      color: #b94b18;
+      background: #fff3ec;
+    }
+    @media (max-width: 760px) {
+      #bo-san-pham .kit-showcase + .kit-showcase { margin-top: 20px; }
+    }
+  `;
+  document.head.appendChild(style);
+}
