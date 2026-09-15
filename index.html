@@ -4,20 +4,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#071526" />
-  <meta name="description" content="MATIVO - Bộ quạt áo điều hòa 36V và 24V không chổi than, pin dung lượng lớn, thiết kế cho công việc ngoài trời và môi trường nhiệt cao." />
-  <meta property="og:title" content="MATIVO | Bộ quạt áo điều hòa 36V & 24V" />
+  <meta name="description" content="MATIVO - Bộ quạt áo điều hòa X36 36V và X24 24V không chổi than, pin dung lượng lớn, thiết kế cho công việc ngoài trời và môi trường nhiệt cao." />
+  <meta property="og:title" content="MATIVO | Bộ quạt áo điều hòa X36 & X24" />
   <meta property="og:description" content="Hai cấu hình MATIVO: X36 hiệu năng cao và X24 gọn nhẹ. Quạt không chổi than, pin dung lượng lớn, lắp lỗ áo 9cm." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/x36-kit.webp" />
-  <title>MATIVO | Quạt áo điều hòa 36V & 24V</title>
+  <title>MATIVO | Quạt áo điều hòa X36 & X24</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="preload" href="assets/x36-kit.webp" as="image" type="image/webp" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="preload" href="assets/x24-full-kit.webp" as="image" type="image/webp" />
+  <link rel="stylesheet" href="styles.css?v=20260915-2" />
   <script>document.documentElement.classList.add('js');</script>
-  <script src="script.js" defer></script>
+  <script src="script.js?v=20260915-2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#noi-dung">Chuyển đến nội dung chính</a>
@@ -25,7 +26,7 @@
   <div class="topbar">
     <div class="container topbar-inner">
       <span><i></i> MATIVO Cooling System</span>
-      <span>2 cấu hình hiện có: 36V hiệu năng cao · 24V gọn nhẹ</span>
+      <span>2 cấu hình hiện có: X36 hiệu năng cao · X24 gọn nhẹ</span>
     </div>
   </div>
 
@@ -39,6 +40,7 @@
       </button>
       <nav class="main-nav" id="main-menu" aria-label="Điều hướng chính" data-menu>
         <a href="#san-pham">Sản phẩm</a>
+        <a href="#thu-vien">Bộ ảnh</a>
         <a href="#so-sanh">So sánh</a>
         <a href="#cong-nghe">Công nghệ</a>
         <a href="#ung-dung">Ứng dụng</a>
@@ -54,7 +56,10 @@
       <div class="container hero-layout">
         <div class="hero-copy reveal">
           <p class="eyebrow"><span></span> Hệ thống làm mát mặc trên người</p>
-          <h1>Mát mạnh hơn.<br><span>Làm lâu hơn.</span></h1>
+          <h1>
+            <span class="hero-line">Mát mạnh hơn.</span>
+            <span class="hero-line hero-line-accent">Làm lâu hơn.</span>
+          </h1>
           <p class="hero-lead">MATIVO đưa quạt không chổi than và pin dung lượng lớn vào một hệ thống gọn trên áo. Chọn <strong>X36</strong> khi ưu tiên lực gió, hoặc <strong>X24</strong> khi ưu tiên nhẹ và thời lượng linh hoạt.</p>
           <div class="hero-actions">
             <a class="button" href="#san-pham">Xem 2 bộ sản phẩm</a>
@@ -67,18 +72,26 @@
           </div>
         </div>
 
-        <div class="hero-products reveal reveal-delay-1">
-          <article class="hero-product hero-product-main">
-            <span class="hero-tag">HIỆU NĂNG CAO</span>
-            <div class="hero-product-media">
-              <img src="assets/x36-kit.webp" alt="Bộ quạt áo điều hòa MATIVO X36 36V gồm 2 quạt và pin 24000mAh" width="1200" height="775" fetchpriority="high" />
+        <div class="hero-showcase reveal reveal-delay-1" aria-label="Hai bộ sản phẩm MATIVO">
+          <article class="hero-sku hero-sku-x36">
+            <div class="hero-sku-head">
+              <span class="hero-tag">HIỆU NĂNG CAO</span>
+              <strong>X36</strong>
             </div>
-            <div class="hero-product-info"><strong>X36</strong><span>36V · 24.000mAh · ~8.600 RPM</span></div>
+            <div class="hero-sku-media">
+              <img src="assets/x36-kit.webp" alt="Bộ MATIVO X36 gồm 2 quạt 36V, pin 24000mAh và dây kết nối" width="1200" height="775" fetchpriority="high" />
+            </div>
+            <p>36V · 24.000mAh · ~8.600 RPM</p>
           </article>
-          <article class="hero-product hero-product-secondary">
-            <span class="hero-tag hero-tag-blue">GỌN NHẸ</span>
-            <img src="assets/x24-full-kit.webp" alt="Bộ quạt áo điều hòa MATIVO X24 24V gồm 2 quạt và pin N41" width="1536" height="1024" loading="eager" />
-            <div class="hero-product-info"><strong>X24</strong><span>24V · 20.000mAh · ~320g pin</span></div>
+          <article class="hero-sku hero-sku-x24">
+            <div class="hero-sku-head">
+              <span class="hero-tag hero-tag-blue">GỌN NHẸ</span>
+              <strong>X24</strong>
+            </div>
+            <div class="hero-sku-media">
+              <img src="assets/x24-full-kit.webp" alt="Bộ MATIVO X24 gồm 2 quạt 24V, pin N41 và dây kết nối" width="1536" height="1024" fetchpriority="high" />
+            </div>
+            <p>24V · 20.000mAh · pin ~320g</p>
           </article>
         </div>
       </div>
@@ -86,7 +99,7 @@
 
     <section class="trust-strip" aria-label="Điểm nổi bật">
       <div class="container trust-grid">
-        <div><b>01</b><p><strong>Quạt không chổi than</strong><span>Bền và ổn định hơn khi vận hành lâu</span></p></div>
+        <div><b>01</b><p><strong>Quạt không chổi than</strong><span>Bền và ổn định khi vận hành dài giờ</span></p></div>
         <div><b>02</b><p><strong>Pin hiển thị LED</strong><span>Theo dõi mức pin trực quan</span></p></div>
         <div><b>03</b><p><strong>Lỗ áo 9cm</strong><span>Tương thích nhiều mẫu áo quạt phổ thông</span></p></div>
         <div><b>04</b><p><strong>Dễ vệ sinh</strong><span>Thiết kế nắp quạt có thể tháo</span></p></div>
@@ -96,8 +109,11 @@
     <section class="section products" id="san-pham">
       <div class="container">
         <div class="section-heading reveal">
-          <div><p class="eyebrow eyebrow-dark"><span></span> Hai lựa chọn MATIVO</p><h2>Chọn đúng cấu hình theo công việc.</h2></div>
-          <p>Không cần chạy theo thông số lớn nhất. X36 dành cho môi trường nóng và cường độ cao; X24 cân bằng giữa lực gió, trọng lượng và thời gian sử dụng.</p>
+          <div>
+            <p class="eyebrow eyebrow-dark"><span></span> Hai lựa chọn MATIVO</p>
+            <h2>Chọn đúng cấu hình theo công việc.</h2>
+          </div>
+          <p>X36 dành cho môi trường nóng và cường độ cao; X24 cân bằng giữa lực gió, trọng lượng và thời gian sử dụng.</p>
         </div>
 
         <div class="product-grid">
@@ -106,7 +122,7 @@
               <div><span class="pill pill-orange">X36 · PERFORMANCE</span><h3>MATIVO X36</h3><p>36V · Quạt không chổi than · Pin 24.000mAh</p></div>
               <span class="recommend">Ưu tiên lực gió</span>
             </div>
-            <figure class="product-media product-media-x36"><img src="assets/x36-kit.webp" alt="Bộ MATIVO X36 với 2 quạt 36V, pin và dây kết nối" width="1200" height="775" loading="lazy" /></figure>
+            <figure class="product-media"><img src="assets/x36-kit.webp" alt="Trọn bộ MATIVO X36" width="1200" height="775" loading="lazy" /></figure>
             <div class="metric-grid">
               <div><strong>~8.600</strong><span>RPM</span></div>
               <div><strong>36V</strong><span>điện áp tối đa</span></div>
@@ -120,7 +136,7 @@
               <li>Kích thước ngoài quạt 10,8cm; lắp lỗ áo 9cm</li>
               <li>Độ dày tổng khoảng 4,2cm; phần trong áo khoảng 3,1cm</li>
             </ul>
-            <a class="button button-dark" href="#so-sanh">So sánh X36</a>
+            <a class="button button-dark" href="#thu-vien">Xem bộ ảnh X36</a>
           </article>
 
           <article class="product-card product-card-x24 reveal reveal-delay-1" id="x24">
@@ -128,7 +144,7 @@
               <div><span class="pill pill-blue">X24 · LIGHTWEIGHT</span><h3>MATIVO X24</h3><p>24V · Quạt không chổi than · Pin N41-24 20.000mAh</p></div>
               <span class="recommend recommend-blue">Ưu tiên gọn nhẹ</span>
             </div>
-            <figure class="product-media"><img src="assets/x24-full-kit.webp" alt="Bộ MATIVO X24 với 2 quạt 24V, pin N41 và dây kết nối" width="1536" height="1024" loading="lazy" /></figure>
+            <figure class="product-media"><img src="assets/x24-full-kit.webp" alt="Trọn bộ MATIVO X24" width="1536" height="1024" loading="lazy" /></figure>
             <div class="metric-grid">
               <div><strong>~6.700</strong><span>RPM</span></div>
               <div><strong>24V</strong><span>điện áp tối đa</span></div>
@@ -142,15 +158,47 @@
               <li>Kích thước ngoài quạt 10,8cm; lắp lỗ áo 9cm</li>
               <li>Độ dày quạt khoảng 3,8cm, pin nhỏ gọn để đeo lâu</li>
             </ul>
-            <a class="button button-blue" href="#so-sanh">So sánh X24</a>
+            <a class="button button-blue" href="#thu-vien">Xem bộ ảnh X24</a>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="thu-vien">
+      <div class="container">
+        <div class="section-heading section-heading-center reveal">
+          <p class="eyebrow eyebrow-dark"><span></span> Bộ ảnh sản phẩm</p>
+          <h2>Nhìn rõ từng bộ trước khi chọn.</h2>
+          <p>Ảnh sản phẩm trên trang chỉ dùng phần hình không có chữ Trung; thông tin được trình bày lại bằng tiếng Việt bên ngoài ảnh để dễ đọc trên cả máy tính và điện thoại.</p>
+        </div>
+
+        <div class="sku-gallery sku-gallery-x36 reveal">
+          <div class="gallery-heading"><div><span>X36</span><h3>Bộ 36V hiệu năng cao</h3></div><p>2 quạt 36V + pin 24.000mAh + dây kết nối + phụ kiện sạc theo cấu hình.</p></div>
+          <div class="gallery-grid gallery-grid-x36">
+            <figure class="gallery-main"><img src="assets/x36-kit.webp" alt="Toàn bộ MATIVO X36" width="1200" height="775" loading="lazy" /><figcaption>Trọn bộ X36</figcaption></figure>
+            <figure class="gallery-detail gallery-detail-fans"><img src="assets/x36-kit.webp" alt="Chi tiết cặp quạt MATIVO X36" width="1200" height="775" loading="lazy" /><figcaption>Cặp quạt 36V</figcaption></figure>
+            <figure class="gallery-detail gallery-detail-battery"><img src="assets/x36-kit.webp" alt="Chi tiết pin MATIVO X36" width="1200" height="775" loading="lazy" /><figcaption>Pin 24.000mAh</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="sku-gallery sku-gallery-x24 reveal">
+          <div class="gallery-heading"><div><span>X24</span><h3>Bộ 24V gọn nhẹ</h3></div><p>2 quạt 24V + pin N41-24 + dây chia DC + cáp Type-C; củ sạc tùy cấu hình.</p></div>
+          <div class="gallery-grid gallery-grid-x24">
+            <figure class="gallery-main"><img src="assets/x24-full-kit.webp" alt="Toàn bộ MATIVO X24" width="1536" height="1024" loading="lazy" /><figcaption>Trọn bộ X24</figcaption></figure>
+            <figure class="gallery-detail"><img src="assets/x24-kit.webp" alt="Cặp quạt và pin MATIVO X24" width="1536" height="1024" loading="lazy" /><figcaption>Quạt + pin N41</figcaption></figure>
+            <figure class="gallery-detail"><img src="assets/battery-n41.webp" alt="Pin N41-24 20000mAh" width="1374" height="1145" loading="lazy" /><figcaption>Pin N41-24</figcaption></figure>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section comparison" id="so-sanh">
       <div class="container">
-        <div class="section-heading section-heading-center reveal"><p class="eyebrow eyebrow-dark"><span></span> Chọn nhanh trong 30 giây</p><h2>X36 hay X24?</h2><p>So sánh trực tiếp những thông số ảnh hưởng nhiều nhất tới trải nghiệm thực tế.</p></div>
+        <div class="section-heading section-heading-center reveal">
+          <p class="eyebrow eyebrow-dark"><span></span> Chọn nhanh trong 30 giây</p>
+          <h2>X36 hay X24?</h2>
+          <p>So sánh trực tiếp những thông số ảnh hưởng nhiều nhất tới trải nghiệm thực tế.</p>
+        </div>
         <div class="compare-wrap reveal">
           <table class="compare-table">
             <thead><tr><th>Tiêu chí</th><th><span class="dot orange"></span>X36</th><th><span class="dot blue"></span>X24</th></tr></thead>
@@ -195,22 +243,15 @@
 
     <section class="section usecases" id="ung-dung">
       <div class="container">
-        <div class="section-heading reveal"><div><p class="eyebrow eyebrow-dark"><span></span> Làm mát đúng môi trường</p><h2>Thiết kế cho người phải làm việc trong nóng.</h2></div><p>Áo quạt phát huy hiệu quả nhất khi không khí được liên tục đưa vào trong áo và lưu thông quanh cơ thể.</p></div>
+        <div class="section-heading reveal">
+          <div><p class="eyebrow eyebrow-dark"><span></span> Làm mát đúng môi trường</p><h2>Thiết kế cho người phải làm việc trong nóng.</h2></div>
+          <p>Áo quạt phát huy hiệu quả nhất khi không khí được liên tục đưa vào trong áo và lưu thông quanh cơ thể.</p>
+        </div>
         <div class="usecase-grid">
           <article><span>01</span><h3>Công trình & xây dựng</h3><p>Di chuyển ngoài trời, tiếp xúc nắng nóng nhiều giờ.</p></article>
           <article><span>02</span><h3>Nhà xưởng & kho vận</h3><p>Môi trường kín, nhiệt tích tụ, cần luồng gió liên tục.</p></article>
           <article><span>03</span><h3>Giao hàng & vận chuyển</h3><p>Di chuyển nhiều, cần bộ quạt gọn và dễ mang theo.</p></article>
           <article><span>04</span><h3>Nông nghiệp & ngoài trời</h3><p>Làm việc dưới nắng, cần chủ động làm mát cơ thể.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section spec-section">
-      <div class="container">
-        <div class="section-heading section-heading-center reveal"><p class="eyebrow eyebrow-dark"><span></span> Bộ sản phẩm tiêu chuẩn</p><h2>Mở hộp là thấy rõ từng thành phần.</h2></div>
-        <div class="kit-grid reveal">
-          <article><div class="kit-img"><img src="assets/x36-kit.webp" alt="Trọn bộ MATIVO X36" width="1200" height="775" loading="lazy" /></div><div><span>X36</span><h3>Bộ 36V</h3><p>2 quạt 36V + pin 24.000mAh + dây nối + phụ kiện sạc theo cấu hình.</p></div></article>
-          <article><div class="kit-img"><img src="assets/x24-full-kit.webp" alt="Trọn bộ MATIVO X24" width="1536" height="1024" loading="lazy" /></div><div><span>X24</span><h3>Bộ 24V</h3><p>2 quạt 24V + pin N41-24 + dây chia DC + cáp Type-C; củ sạc có thể là tùy chọn.</p></div></article>
         </div>
       </div>
     </section>
@@ -224,9 +265,13 @@
 
     <section class="section faq" id="faq">
       <div class="container faq-layout">
-        <div class="faq-intro reveal"><p class="eyebrow eyebrow-dark"><span></span> Hỏi đáp nhanh</p><h2>Những điều nên biết trước khi chọn.</h2><p>Thông số được trình bày theo bộ tài liệu sản phẩm hiện có và có thể được cập nhật khi phiên bản thương mại chính thức thay đổi.</p></div>
+        <div class="faq-intro reveal">
+          <p class="eyebrow eyebrow-dark"><span></span> Hỏi đáp nhanh</p>
+          <h2>Những điều nên biết trước khi chọn.</h2>
+          <p>Thông số được trình bày theo bộ tài liệu sản phẩm hiện có và có thể được cập nhật khi phiên bản thương mại chính thức thay đổi.</p>
+        </div>
         <div class="faq-list reveal reveal-delay-1">
-          <details><summary>X36 và X24 có lắp được cùng loại áo không?</summary><p>Cả hai bộ đều được công bố phù hợp lỗ lắp quạt phổ thông đường kính khoảng 9cm. Tuy vậy nên kiểm tra kích thước lỗ áo thực tế trước khi lắp.</p></details>
+          <details><summary>X36 và X24 có lắp được cùng loại áo không?</summary><p>Cả hai bộ đều được công bố phù hợp lỗ lắp quạt phổ thông đường kính khoảng 9cm. Nên kiểm tra kích thước lỗ áo thực tế trước khi lắp.</p></details>
           <details><summary>X24 dùng được bao lâu?</summary><p>Theo tài liệu mẫu N41-24: khoảng 6 giờ ở 24V, 7,8 giờ ở 20V, 10 giờ ở 17V và 20 giờ ở 13V. Thời gian thực tế phụ thuộc điều kiện sử dụng.</p></details>
           <details><summary>X36 có gì nổi bật hơn?</summary><p>X36 có điện áp tối đa 36V, tốc độ khoảng 8.600 RPM và công suất mỗi quạt khoảng 12,2W, hướng đến nhu cầu lực gió cao hơn.</p></details>
           <details><summary>Có thể vệ sinh quạt không?</summary><p>Có. Thiết kế nắp trước có thể tháo để tiếp cận phần cánh quạt và làm sạch bụi dễ hơn.</p></details>
@@ -244,7 +289,7 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <img src="assets/mativo-logo.webp" alt="MATIVO" width="2172" height="724" />
+      <a class="footer-brand" href="#trang-chu" aria-label="MATIVO - Lên đầu trang"><img src="assets/mativo-logo.webp" alt="MATIVO" /></a>
       <p>MATIVO · Hệ thống quạt áo điều hòa cho công việc trong môi trường nóng.</p>
       <a href="#trang-chu">Lên đầu trang ↑</a>
     </div>
