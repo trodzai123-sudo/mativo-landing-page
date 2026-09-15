@@ -329,6 +329,14 @@ document.querySelectorAll("[data-buy-product]").forEach((button) => {
   });
 });
 
+document.querySelectorAll("[data-open-quote]").forEach((button) => {
+  button.addEventListener("click", (event) => {
+    if (!quoteForm) return;
+    event.preventDefault();
+    openQuoteModal("", button);
+  });
+});
+
 quoteBackdrop?.addEventListener("click", closeQuoteModal);
 quoteFormClose?.addEventListener("click", closeQuoteModal);
 
@@ -358,13 +366,13 @@ const comparisonScroll = document.querySelector("[data-comparison-scroll]");
 
 if (comparisonScroll) {
   const comparisonImage = comparisonScroll.querySelector("img");
-  const mobileComparison = window.matchMedia("(max-width: 700px)");
 
   const positionComparisonBanner = () => {
     requestAnimationFrame(() => {
-      comparisonScroll.scrollLeft = mobileComparison.matches
-        ? Math.max(0, (comparisonScroll.scrollWidth - comparisonScroll.clientWidth) / 2)
-        : 0;
+      comparisonScroll.scrollLeft = Math.max(
+        0,
+        (comparisonScroll.scrollWidth - comparisonScroll.clientWidth) / 2,
+      );
     });
   };
 
@@ -374,11 +382,7 @@ if (comparisonScroll) {
     comparisonImage?.addEventListener("load", positionComparisonBanner, { once: true });
   }
 
-  if (typeof mobileComparison.addEventListener === "function") {
-    mobileComparison.addEventListener("change", positionComparisonBanner);
-  } else {
-    mobileComparison.addListener?.(positionComparisonBanner);
-  }
+  window.addEventListener("resize", positionComparisonBanner, { passive: true });
 }
 
 const imageViewer = document.querySelector("[data-image-viewer]");
@@ -387,7 +391,9 @@ const viewerCanvas = imageViewer?.querySelector("[data-viewer-canvas]");
 const viewerTitle = imageViewer?.querySelector("[data-viewer-title]");
 const viewerZoomOutput = imageViewer?.querySelector("[data-viewer-zoom-output]");
 const viewerOpenButton = document.querySelector("[data-gallery-zoom-open]");
+const comparisonZoomButton = document.querySelector("[data-comparison-zoom-open]");
 const galleryMainImage = productGallery?.querySelector("[data-gallery-main]");
+const comparisonViewerImage = document.querySelector("[data-comparison-image]");
 let viewerScale = 1;
 let viewerX = 0;
 let viewerY = 0;
@@ -427,32 +433,39 @@ const closeViewer = () => {
   focusTarget?.focus();
 };
 
-const openViewer = (focusTarget = viewerOpenButton) => {
-  if (!imageViewer || !viewerImage || !galleryMainImage) return;
+const openViewer = (sourceImage, focusTarget = sourceImage) => {
+  if (!imageViewer || !viewerImage || !sourceImage) return;
   viewerReturnFocus = focusTarget;
-  viewerImage.src = galleryMainImage.currentSrc || galleryMainImage.src;
-  viewerImage.alt = galleryMainImage.alt;
-  if (viewerTitle) viewerTitle.textContent = galleryMainImage.alt || "Ảnh sản phẩm MATIVO";
+  viewerImage.src = sourceImage.currentSrc || sourceImage.src;
+  viewerImage.alt = sourceImage.alt;
+  if (viewerTitle) viewerTitle.textContent = sourceImage.alt || "Ảnh MATIVO";
   imageViewer.hidden = false;
   document.body.classList.add("viewer-open");
   resetViewer();
   imageViewer.querySelector("[data-viewer-close]")?.focus();
 };
 
-viewerOpenButton?.addEventListener("click", () => openViewer(viewerOpenButton));
+const bindViewerTrigger = (sourceImage, accessibleLabel) => {
+  if (!sourceImage) return;
+  sourceImage.tabIndex = 0;
+  sourceImage.setAttribute("role", "button");
+  sourceImage.setAttribute("aria-label", accessibleLabel);
 
-if (galleryMainImage) {
-  galleryMainImage.tabIndex = 0;
-  galleryMainImage.setAttribute("role", "button");
-  galleryMainImage.setAttribute("aria-label", "Nhấp để phóng to ảnh sản phẩm");
-
-  galleryMainImage.addEventListener("click", () => openViewer(galleryMainImage));
-  galleryMainImage.addEventListener("keydown", (event) => {
+  sourceImage.addEventListener("click", () => openViewer(sourceImage, sourceImage));
+  sourceImage.addEventListener("keydown", (event) => {
     if (event.key !== "Enter" && event.key !== " ") return;
     event.preventDefault();
-    openViewer(galleryMainImage);
+    openViewer(sourceImage, sourceImage);
   });
-}
+};
+
+viewerOpenButton?.addEventListener("click", () => openViewer(galleryMainImage, viewerOpenButton));
+comparisonZoomButton?.addEventListener("click", () =>
+  openViewer(comparisonViewerImage, comparisonZoomButton),
+);
+
+bindViewerTrigger(galleryMainImage, "Nhấp để phóng to ảnh sản phẩm");
+bindViewerTrigger(comparisonViewerImage, "Nhấp để phóng to banner so sánh X24 và X36");
 
 imageViewer?.querySelectorAll("[data-viewer-close]").forEach((button) => {
   button.addEventListener("click", closeViewer);

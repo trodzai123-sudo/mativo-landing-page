@@ -64,7 +64,7 @@
           <a href="#cong-nghe">Công nghệ</a>
           <a href="#thong-so">Thông số</a>
           <a href="#faq">Hỏi đáp</a>
-          <a class="button button-small" href="#bao-gia">Nhận báo giá</a>
+          <a class="button button-small" href="#bao-gia" aria-haspopup="dialog" data-open-quote>Nhận báo giá</a>
         </nav>
       </div>
     </header>
@@ -157,11 +157,21 @@
                 height="762"
                 loading="lazy"
                 decoding="async"
+                data-comparison-image
               />
             </div>
             <figcaption>
-              Chọn X24 khi ưu tiên gọn nhẹ; chọn X36 khi ưu tiên lực gió và hiệu năng cao hơn.
-              <span class="mobile-swipe-hint">Vuốt ngang để xem rõ toàn bộ banner.</span>
+              <span>
+                Chọn X24 khi ưu tiên gọn nhẹ; chọn X36 khi ưu tiên lực gió và hiệu năng cao hơn.
+                <span class="mobile-swipe-hint">Vuốt ngang để xem rõ toàn bộ banner.</span>
+              </span>
+              <button class="comparison-zoom-button" type="button" data-comparison-zoom-open>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="11" cy="11" r="6.5" />
+                  <path d="m16 16 4 4M11 8v6M8 11h6" />
+                </svg>
+                Phóng to / thu nhỏ
+              </button>
             </figcaption>
           </figure>
         </div>
@@ -543,14 +553,16 @@
                 </ul>
                 <a class="button product-buy-button button-light" href="#bao-gia" data-buy-product="X24">Mua ngay X24</a>
               </div>
-              <img
-                src="assets/x24-kit.webp"
-                alt="Cặp quạt MATIVO X24 và pin N41"
-                width="1280"
-                height="853"
-                loading="lazy"
-                decoding="async"
-              />
+              <div class="component-media">
+                <img
+                  src="assets/x24-kit.webp"
+                  alt="Cặp quạt MATIVO X24 và pin N41"
+                  width="1280"
+                  height="853"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
             </article>
 
             <article class="component-card component-card-light reveal reveal-delay-1">
@@ -564,14 +576,16 @@
                 </ul>
                 <a class="button product-buy-button" href="#bao-gia" data-buy-product="X36">Mua ngay X36</a>
               </div>
-              <img
-                src="assets/x36-gallery-kit.webp"
-                alt="Trọn bộ quạt MATIVO X36 và pin 24.000mAh"
-                width="1254"
-                height="1254"
-                loading="lazy"
-                decoding="async"
-              />
+              <div class="component-media component-media-x36">
+                <img
+                  src="assets/x36-gallery-kit.webp"
+                  alt="Trọn bộ quạt MATIVO X36 và pin 24.000mAh"
+                  width="1254"
+                  height="1254"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
             </article>
           </div>
         </div>
@@ -908,6 +922,6 @@
       </a>
     </aside>
 
-    <a class="mobile-cta" href="#bao-gia">Nhận báo giá X24 / X36</a>
+    <a class="mobile-cta" href="#bao-gia" aria-haspopup="dialog" data-open-quote>Nhận báo giá X24 / X36</a>
   </body>
 </html>

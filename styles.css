@@ -597,8 +597,13 @@ button {
   overflow: hidden;
 }
 
+.comparison-banner .container {
+  width: min(calc(100% - 32px), 1500px);
+}
+
 .comparison-banner-frame {
-  width: min(100%, 1200px);
+  position: relative;
+  width: 100%;
   margin: 0 auto;
   padding: 10px;
   border: 1px solid rgba(27, 132, 224, 0.16);
@@ -609,23 +614,68 @@ button {
 
 .comparison-banner-scroll {
   border-radius: 21px;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: x proximity;
+  scrollbar-color: rgba(8, 126, 242, 0.58) rgba(8, 126, 242, 0.1);
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
 }
 
 .comparison-banner-scroll img {
   display: block;
-  width: 100%;
+  width: max(100%, 1560px);
+  max-width: none;
   height: auto;
   aspect-ratio: 2048 / 762;
   border-radius: 21px;
-  object-fit: cover;
+  object-fit: contain;
+  cursor: zoom-in;
+  scroll-snap-align: center;
 }
 
 .comparison-banner-frame figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 12px 10px 4px;
+  gap: 14px;
   color: #718196;
-  font-size: 0.66rem;
+  font-size: 0.72rem;
   text-align: center;
+}
+
+.comparison-zoom-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 14px;
+  gap: 7px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(8, 126, 242, 0.22);
+  border-radius: 999px;
+  color: var(--blue-dark);
+  background: var(--white);
+  box-shadow: 0 8px 22px rgba(8, 90, 170, 0.12);
+  font-size: 0.7rem;
+  font-weight: 750;
+  cursor: zoom-in;
+}
+
+.comparison-zoom-button:hover {
+  color: var(--white);
+  background: var(--blue);
+}
+
+.comparison-zoom-button svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
 }
 
 .mobile-swipe-hint {
@@ -1334,8 +1384,10 @@ button {
 
 .component-card {
   position: relative;
-  min-height: 630px;
+  display: flex;
+  min-height: 760px;
   padding: 42px;
+  flex-direction: column;
   border-radius: var(--radius-lg);
   overflow: hidden;
 }
@@ -1431,19 +1483,39 @@ button {
   font-size: 0.62rem;
 }
 
-.component-card img {
-  position: absolute;
+.component-media {
+  position: relative;
   z-index: 1;
-  right: -8%;
-  bottom: -3%;
-  width: 92%;
-  max-width: none;
+  display: grid;
+  min-height: 330px;
+  margin: auto -12px -14px;
+  padding-top: 30px;
+  place-items: end center;
+  overflow: hidden;
 }
 
-.component-card-light img {
-  right: -3%;
-  bottom: -4%;
-  width: 88%;
+.component-media img {
+  position: static;
+  width: 100%;
+  max-width: 540px;
+  max-height: 350px;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.component-media-x36 {
+  margin: 32px 0 -14px;
+  padding: 14px;
+  border: 1px solid rgba(8, 126, 242, 0.12);
+  border-radius: 20px;
+  background: #f4f9ff;
+}
+
+.component-media-x36 img {
+  width: auto;
+  max-width: 100%;
+  max-height: 390px;
+  border-radius: 12px;
 }
 
 .technology {
@@ -2295,7 +2367,7 @@ body.viewer-open {
   z-index: 1;
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
-  width: min(1180px, 100%);
+  width: min(1540px, 100%);
   height: min(860px, calc(100vh - 48px));
   min-width: 0;
   min-height: 0;
@@ -3498,5 +3570,45 @@ body.viewer-open {
   .js .reveal {
     opacity: 1;
     transform: none;
+  }
+}
+
+
+/* Readable comparison and stable component media refinements. */
+@media (min-width: 701px) and (max-width: 920px) {
+  .comparison-banner-scroll img {
+    width: 1200px;
+  }
+}
+
+@media (max-width: 700px) {
+  .comparison-banner-frame figcaption {
+    align-items: stretch;
+    padding: 10px 6px 4px;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .comparison-zoom-button {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .component-media {
+    min-height: 0;
+    margin: 25px 0 -6px;
+    padding-top: 0;
+  }
+
+  .component-media img,
+  .component-media-x36 img {
+    width: auto;
+    max-width: 100%;
+    max-height: 330px;
+    margin: 0;
+  }
+
+  .component-media-x36 {
+    padding: 9px;
   }
 }
