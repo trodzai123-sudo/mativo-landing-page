@@ -26,3 +26,12 @@ Sau đó mở `http://localhost:4173`.
 ## Triển khai
 
 Trang là website tĩnh, có thể triển khai trực tiếp bằng GitHub Pages, Cloudflare Pages, Netlify hoặc Vercel mà không cần bước build.
+
+### Cloudflare Pages
+
+- Production branch: `main`
+- Build command: để trống
+- Build output directory: `/` (thư mục gốc repository)
+- Không cần Node.js, npm hoặc framework build.
+
+Nếu một lần deploy từ GitHub bị lỗi tạm thời, commit mới trên `main` sẽ kích hoạt lại Automatic Deployment mà không làm thay đổi mã nguồn trang.
