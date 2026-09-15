@@ -3612,3 +3612,58 @@ body.viewer-open {
     padding: 9px;
   }
 }
+
+/* Keep the mobile gallery inside the viewport and show every product image in full. */
+@media (max-width: 920px) {
+  .product-showcase .container,
+  .product-gallery-layout,
+  .product-gallery-layout > *,
+  .gallery-stage,
+  .gallery-image-wrap,
+  .gallery-browser {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .product-gallery-layout {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .gallery-stage,
+  .gallery-browser {
+    width: 100%;
+  }
+
+  .gallery-browser {
+    overflow: hidden;
+  }
+
+  .gallery-thumbs {
+    max-width: 100%;
+  }
+
+  .gallery-image-wrap {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: grid;
+    place-items: center;
+  }
+
+  .gallery-image-wrap > img[data-gallery-main] {
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center;
+    transform: none;
+  }
+
+  .gallery-image-wrap > img[data-gallery-main].is-changing {
+    opacity: 0.35;
+    transform: scale(0.988);
+  }
+}

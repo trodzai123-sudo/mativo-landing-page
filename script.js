@@ -1,3 +1,36 @@
+const initialPageUrl = new URL(window.location.href);
+const resetScrollOnMobile =
+  window.matchMedia("(max-width: 920px)").matches &&
+  initialPageUrl.searchParams.get("bao-gia") !== "da-gui";
+
+if (resetScrollOnMobile) {
+  if ("scrollRestoration" in window.history) {
+    window.history.scrollRestoration = "manual";
+  }
+
+  if (initialPageUrl.hash) {
+    window.history.replaceState(
+      {},
+      "",
+      `${initialPageUrl.pathname}${initialPageUrl.search}`,
+    );
+  }
+
+  const resetInitialScroll = () => window.scrollTo(0, 0);
+
+  resetInitialScroll();
+  window.addEventListener("pageshow", resetInitialScroll, { once: true });
+  window.addEventListener(
+    "load",
+    () => {
+      resetInitialScroll();
+      window.requestAnimationFrame(resetInitialScroll);
+      window.setTimeout(resetInitialScroll, 180);
+    },
+    { once: true },
+  );
+}
+
 const header = document.querySelector("[data-header]");
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const menu = document.querySelector("[data-menu]");
