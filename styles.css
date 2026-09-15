@@ -858,6 +858,7 @@ button {
 }
 
 .gallery-panel {
+  align-self: start;
   display: flex;
   flex-direction: column;
   padding: 31px;
@@ -893,47 +894,86 @@ button {
   line-height: 1.7;
 }
 
+.gallery-browser {
+  grid-column: 1 / -1;
+  padding: 18px 20px 16px;
+  border: 1px solid rgba(123, 199, 255, 0.16);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.gallery-browser-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  color: rgba(220, 237, 255, 0.48);
+  font-size: 0.65rem;
+}
+
+.gallery-browser-heading strong {
+  color: var(--white);
+  font-size: 0.78rem;
+}
+
+.gallery-browser-heading strong span {
+  color: var(--model-accent);
+}
+
 .gallery-thumbs {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-top: 24px;
-  gap: 8px;
+  grid-template-columns: repeat(4, minmax(140px, 190px));
+  justify-content: center;
+  margin-top: 14px;
+  gap: 14px;
 }
 
 .gallery-thumb {
   min-width: 0;
-  padding: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 13px;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
   color: rgba(230, 242, 255, 0.68);
-  background: rgba(255, 255, 255, 0.045);
+  background: transparent;
   text-align: left;
   cursor: pointer;
-  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .gallery-thumb:hover {
-  border-color: rgba(97, 193, 255, 0.42);
+  color: var(--white);
   transform: translateY(-2px);
 }
 
 .gallery-thumb.is-active {
-  border-color: var(--model-accent);
-  background: rgba(24, 137, 237, 0.16);
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--model-accent) 12%, transparent);
+  color: var(--white);
 }
 
 .gallery-thumb img {
+  display: block;
   width: 100%;
   aspect-ratio: 1 / 1;
-  border-radius: 8px;
+  padding: 3px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
   object-fit: cover;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-thumb:hover img {
+  border-color: rgba(97, 193, 255, 0.42);
+}
+
+.gallery-thumb.is-active img {
+  border-color: var(--model-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--model-accent) 15%, transparent);
 }
 
 .gallery-thumb span {
   display: block;
-  padding: 8px 2px 1px;
-  font-size: 0.61rem;
+  padding: 8px 2px 0;
+  font-size: 0.68rem;
   font-weight: 600;
   line-height: 1.35;
 }
@@ -944,26 +984,26 @@ button {
 }
 
 .gallery-hint {
-  margin: 0;
+  margin: 12px 0 0;
   color: rgba(220, 237, 255, 0.38);
-  font-size: 0.61rem;
+  font-size: 0.62rem;
+  text-align: center;
 }
 
 .gallery-panel-footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-top: auto;
-  padding-top: 24px;
+  justify-content: flex-start;
+  margin-top: 24px;
   gap: 18px;
 }
 
 .gallery-quote {
-  min-height: 42px;
-  padding-inline: 16px;
+  min-height: 48px;
+  padding-inline: 22px;
   border-color: var(--model-accent);
   background: linear-gradient(135deg, color-mix(in srgb, var(--model-accent) 82%, #ffffff), var(--blue-dark));
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   white-space: nowrap;
 }
 
@@ -2897,32 +2937,49 @@ body.viewer-open {
 
 @media (max-width: 700px) {
   .product-showcase {
-    padding: 56px 0;
+    padding: 44px 0 50px;
+  }
+
+  .product-showcase .container {
+    width: min(calc(100% - 20px), var(--container));
   }
 
   .product-gallery-heading {
-    margin-bottom: 27px;
+    margin-bottom: 20px;
+    padding-inline: 6px;
   }
 
   .product-gallery-heading-copy > p {
     margin-top: 2px;
+    font-size: 0.84rem;
+    line-height: 1.65;
   }
 
   .model-switch {
     margin-top: 15px;
+    padding: 6px;
   }
 
   .model-switch button {
-    min-height: 52px;
-    padding: 7px 10px;
+    min-height: 60px;
+    padding: 9px 11px;
+  }
+
+  .model-switch strong {
+    font-size: 1rem;
+  }
+
+  .model-switch span {
+    font-size: 0.65rem;
   }
 
   .gallery-stage {
-    padding: 9px;
+    padding: 8px;
   }
 
   .gallery-stage-top {
-    padding: 2px 4px 9px;
+    padding: 4px 5px 10px;
+    font-size: 0.68rem;
   }
 
   .gallery-image-wrap {
@@ -2950,33 +3007,56 @@ body.viewer-open {
   }
 
   .gallery-stage figcaption {
-    padding: 9px 4px 0;
+    padding: 10px 5px 2px;
+    font-size: 0.69rem;
   }
 
   .gallery-panel {
-    padding: 20px 16px 17px;
+    min-height: 0;
+    padding: 20px 18px 18px;
   }
 
   .gallery-copy {
-    padding-bottom: 17px;
+    padding-bottom: 18px;
   }
 
   .gallery-copy h3 {
-    margin: 7px 0;
-    font-size: 1.32rem;
+    margin: 8px 0;
+    font-size: 1.52rem;
+    line-height: 1.18;
   }
 
   .gallery-copy p {
-    font-size: 0.72rem;
+    font-size: 0.82rem;
+    line-height: 1.62;
+  }
+
+  .gallery-browser {
+    padding: 15px 10px 13px;
+    border-radius: 20px;
+  }
+
+  .gallery-browser-heading {
+    align-items: flex-start;
+    padding-inline: 3px;
+    gap: 8px;
+    font-size: 0.62rem;
+  }
+
+  .gallery-browser-heading strong {
+    flex: 0 0 auto;
+    font-size: 0.78rem;
   }
 
   .gallery-thumbs {
     display: flex;
-    margin: 17px -4px 0;
-    padding: 4px;
-    gap: 8px;
+    justify-content: flex-start;
+    margin: 13px -2px 0;
+    padding: 4px 2px 7px;
+    gap: 12px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scroll-padding-inline: 2px;
     scrollbar-width: none;
   }
 
@@ -2985,26 +3065,35 @@ body.viewer-open {
   }
 
   .gallery-thumb {
-    width: 76px;
-    flex: 0 0 76px;
+    width: clamp(132px, 42vw, 160px);
+    flex: 0 0 clamp(132px, 42vw, 160px);
     scroll-snap-align: start;
   }
 
+  .gallery-thumb img {
+    border-radius: 14px;
+  }
+
   .gallery-thumb span {
-    padding-top: 6px;
-    font-size: 0.55rem;
+    padding: 9px 3px 0;
+    font-size: 0.72rem;
   }
 
   .gallery-panel-footer {
-    align-items: stretch;
-    flex-direction: column;
-    margin-top: 0;
-    padding-top: 16px;
-    gap: 12px;
+    margin-top: 18px;
   }
 
   .gallery-quote {
     width: 100%;
+    min-height: 56px;
+    font-size: 0.86rem;
+  }
+
+  .gallery-hint {
+    margin-top: 8px;
+    padding-inline: 3px;
+    font-size: 0.65rem;
+    text-align: left;
   }
 
   .kit-buy-button,

@@ -69,6 +69,8 @@ if (productShowcase && productGallery) {
   const galleryTotal = productGallery.querySelector("[data-gallery-total]");
   const galleryKicker = productGallery.querySelector(".gallery-copy .mini-label");
   const galleryModelLabel = productGallery.querySelector("[data-gallery-model-label]");
+  const galleryBrowserModel = productGallery.querySelector("[data-gallery-browser-model]");
+  const galleryThumbs = productGallery.querySelector(".gallery-thumbs");
   const galleryStage = productGallery.querySelector("[data-gallery-stage]");
   const previousButton = productGallery.querySelector("[data-gallery-prev]");
   const nextButton = productGallery.querySelector("[data-gallery-next]");
@@ -77,6 +79,19 @@ if (productShowcase && productGallery) {
   let activeIndex = 0;
   let imageRequest = 0;
   let touchStart = null;
+
+  const keepThumbnailVisible = (button, animate) => {
+    if (!galleryThumbs || !button || galleryThumbs.scrollWidth <= galleryThumbs.clientWidth) return;
+    const itemLeft = button.offsetLeft - galleryThumbs.offsetLeft;
+    const itemRight = itemLeft + button.offsetWidth;
+    const viewLeft = galleryThumbs.scrollLeft;
+    const viewRight = viewLeft + galleryThumbs.clientWidth;
+    if (itemLeft >= viewLeft && itemRight <= viewRight) return;
+    galleryThumbs.scrollTo({
+      left: Math.max(0, itemLeft - 4),
+      behavior: animate ? "smooth" : "auto",
+    });
+  };
 
   const showGalleryItem = (button, animate = true) => {
     if (!button || !galleryImage) return;
@@ -88,6 +103,7 @@ if (productShowcase && productGallery) {
       item.setAttribute("aria-selected", String(isActive));
       item.tabIndex = isActive ? 0 : -1;
     });
+    keepThumbnailVisible(button, animate);
 
     const model = button.dataset.galleryItemModel || productGallery.dataset.galleryModel;
     if (galleryTitle) galleryTitle.textContent = button.dataset.galleryTitle;
@@ -146,6 +162,8 @@ if (productShowcase && productGallery) {
     });
 
     if (galleryModelLabel) galleryModelLabel.textContent = `MATIVO ${model}`;
+    if (galleryBrowserModel) galleryBrowserModel.textContent = model;
+    if (galleryThumbs) galleryThumbs.setAttribute("aria-label", `Chọn ảnh sản phẩm MATIVO ${model}`);
     if (galleryTotal) galleryTotal.textContent = String(activeItems.length).padStart(2, "0");
     if (buyButton) {
       buyButton.dataset.buyProduct = model;
